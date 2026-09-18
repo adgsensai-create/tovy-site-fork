@@ -132,6 +132,62 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      {/* What happens next */}
+      <section className="bg-white px-6 py-16 md:py-20 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl mb-8 text-charcoal">
+            What happens after you reach out
+          </h2>
+          <ol className="space-y-5 text-charcoal-light leading-relaxed list-decimal pl-5">
+            <li>
+              <strong className="font-semibold text-charcoal">I reply within 24 to 48 hours</strong> with a few
+              questions about your family, the kind of session you have in mind, and dates that work.
+            </li>
+            <li>
+              <strong className="font-semibold text-charcoal">We pick a package and a place.</strong> I suggest a
+              location that fits the season and your kids, or we plan an in-home session.
+            </li>
+            <li>
+              <strong className="font-semibold text-charcoal">You get a prep note.</strong> Wardrobe ideas, timing,
+              and how to get the kids ready. Hint: just let them be themselves.
+            </li>
+            <li>
+              <strong className="font-semibold text-charcoal">Your gallery arrives in 2 to 3 weeks</strong> as a
+              private online gallery with full print rights.
+            </li>
+          </ol>
+          <div className="mt-10 space-y-6">
+            <div>
+              <h3 className="font-[family-name:var(--font-cormorant)] text-2xl mb-2 text-charcoal">
+                Where do you photograph?
+              </h3>
+              <p className="text-charcoal-light leading-relaxed">
+                Skokie, Evanston, Lincolnwood, Wilmette, Morton Grove, Glenview, Niles, Northbrook,
+                Park Ridge, Winnetka, Highland Park, West Rogers Park and Chicago. Sessions within 10 miles of
+                Skokie carry no travel fee.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-[family-name:var(--font-cormorant)] text-2xl mb-2 text-charcoal">
+                How much do sessions cost?
+              </h3>
+              <p className="text-charcoal-light leading-relaxed">
+                Sessions start at $200 for a 30-minute mini and go up to $500 for a 90-minute full session.
+                Events are quoted individually. See the full breakdown on the Sessions and Pricing page.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-[family-name:var(--font-cormorant)] text-2xl mb-2 text-charcoal">
+                How far ahead should I book?
+              </h3>
+              <p className="text-charcoal-light leading-relaxed">
+                Two to three weeks for most sessions, August for fall dates, and your third trimester for newborn
+                sessions so we can hold a tentative date.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -9,9 +9,13 @@ export interface BlogPost {
   content: string; // HTML content
   seoTitle?: string;
   seoDescription?: string;
+  faqs?: { question: string; answer: string }[];
 }
 
+import { seoBlogPosts } from "./blog-posts-seo";
+
 export const blogPosts: BlogPost[] = [
+  ...seoBlogPosts,
   {
     slug: "garfield-park-conservatory-engagement-photos-chicago",
     title: "Garfield Park Conservatory Engagement Photos in Chicago",

@@ -9,6 +9,7 @@ import {
   formatDate,
   blogPosts,
 } from "@/lib/blog-data";
+import { faqJsonLd } from "@/lib/site";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -24,7 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: post.seoTitle || `${post.title} | Tovy Photography Blog`,
+    title: post.seoTitle
+      ? { absolute: post.seoTitle }
+      : `${post.title} | Tovy Photography Blog`,
     description:
       post.seoDescription || post.excerpt,
     alternates: {
@@ -76,12 +79,20 @@ export default async function BlogPostPage({ params }: Props) {
     }),
   };
 
+  const faqLd = post.faqs && post.faqs.length ? faqJsonLd(post.faqs) : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
 
       {/* Hero */}
       <section className="bg-rose/15 pt-32 pb-16 px-6 lg:px-8">

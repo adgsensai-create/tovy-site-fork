@@ -239,9 +239,9 @@ export default function HeroSlideshow() {
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-charcoal/50">
             Skokie &amp; Chicago North Shore
           </p>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl leading-[1.05] text-charcoal mb-5">
+          <p className="font-[family-name:var(--font-cormorant)] text-4xl leading-[1.05] text-charcoal mb-5">
             Seeing the good in <em className="italic">your</em> world
-          </h1>
+          </p>
           <p className="mb-8 text-xs font-medium uppercase tracking-[0.2em] text-charcoal/60">
             Families · Newborns · Milestones · Events
           </p>

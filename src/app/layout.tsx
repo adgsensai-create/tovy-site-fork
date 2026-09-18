@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Tovy Photography",
   },
   description:
-    "Tovy Photography captures authentic family, newborn, and milestone moments in Skokie, IL and Chicago's North Shore. Natural light photography that sees the good in your world.",
+    "Skokie family, newborn, maternity and milestone photographer. Natural light sessions at home or on location across Chicago's North Shore.",
   openGraph: {
     type: "website",
     locale: "en_US",

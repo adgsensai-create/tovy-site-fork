@@ -4,9 +4,9 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Sessions & Pricing — Skokie Family, Newborn & Maternity Photographer | Tovy Photography",
+  title: "Sessions and Pricing",
   description:
-    "Family, newborn, maternity, milestone, and event photography packages starting at $200. In-home sessions available. Skokie, Evanston, Lincolnwood, and Chicago's North Shore.",
+    "Family, newborn, maternity, milestone, mini session and event photography from $200. In-home and on-location sessions in Skokie and the North Shore.",
   alternates: {
     canonical: "https://tovyphotography.com/sessions",
   },
@@ -57,6 +57,8 @@ const sessions: {
       "Bar Mitzvahs, Upshirins, celebrations big and small. I blend in, keep the energy fun, and capture every detail and real feeling so when you look back, it all comes rushing right back.",
     alt: "Bar Mitzvah photographer Skokie — boy putting on tallit prayer shawl during ceremony",
     src: "/photos/stolberg-bar-mitzvah/10-putting-on-tallit.jpg",
+    learnMoreHref: "/sessions/bar-mitzvah-photography",
+    learnMoreLabel: "learn more about bar and bat mitzvah coverage",
   },
 ];
 
@@ -302,6 +304,27 @@ export default function SessionsPage() {
               </div>
               </ScrollReveal>
             ))}
+          </div>
+          <div className="mb-10">
+            <p className="text-center text-sm uppercase tracking-wider text-charcoal/60 mb-4">
+              Also offering
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                { href: "/sessions/maternity-photography", label: "Maternity Sessions" },
+                { href: "/sessions/milestone-photography", label: "Milestone Sessions" },
+                { href: "/sessions/mini-sessions", label: "Mini Sessions" },
+                { href: "/sessions/bar-mitzvah-photography", label: "Bar and Bat Mitzvahs" },
+              ].map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="border border-charcoal/15 px-4 py-2 text-sm text-charcoal hover:border-sage hover:text-sage-dark transition-colors"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
           </div>
           <p className="text-center text-sm text-charcoal-light mt-10">
             Based in Skokie. Sessions within 10 miles are included. A $50 travel fee applies for locations beyond that — just ask if you&apos;re not sure!

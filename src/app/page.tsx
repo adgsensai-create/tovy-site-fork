@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { localBusinessJsonLd } from "@/lib/site";
 import Link from "next/link";
 import Image from "next/image";
 import HeroSlideshow from "@/components/HeroSlideshow";
@@ -8,7 +9,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Tovy Photography | Skokie Family & Newborn Photographer",
   description:
-    "Tovy Photography captures authentic family, newborn, and milestone moments in Skokie, IL and Chicago's North Shore. Natural light photography that sees the good in your world.",
+    "Skokie family, newborn, maternity and milestone photographer. Natural light sessions at home or on location across Chicago's North Shore.",
   alternates: {
     canonical: "https://tovyphotography.com",
   },
@@ -69,35 +70,10 @@ const testimonials = [
 ];
 
 export default function HomePage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "Photographer"],
-    name: "Tovy Photography",
+  const jsonLd = localBusinessJsonLd({
     description:
-      "Family, newborn, and milestone photographer in Skokie, IL serving Chicago's North Shore. Natural light photography capturing authentic moments.",
-    url: "https://tovyphotography.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Skokie",
-      addressRegion: "IL",
-      addressCountry: "US",
-    },
-    email: "tovypics@gmail.com",
-    sameAs: ["https://www.instagram.com/tovyphotography?igsh=MWs3MnEzZXJ1bDY5ag%3D%3D&utm_source=qr"],
-    areaServed: [
-      { "@type": "City", name: "Skokie" },
-      { "@type": "City", name: "Evanston" },
-      { "@type": "City", name: "Lincolnwood" },
-      { "@type": "City", name: "Wilmette" },
-      { "@type": "City", name: "Chicago" },
-    ],
-    priceRange: "$200-$500",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "25",
-    },
-  };
+      "Family, newborn, maternity and milestone photographer in Skokie, IL serving Chicago's North Shore. Natural light photography capturing authentic moments.",
+  });
 
   return (
     <>
