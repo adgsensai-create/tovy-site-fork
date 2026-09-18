@@ -196,4 +196,93 @@ export const seoBlogPosts: BlogPost[] = [
 <p>Ready to plan? Here is <a href="/sessions/newborn-photography">how my in-home newborn sessions work</a>, or <a href="/contact">reach out</a> with your due date.</p>
 `,
   },
+  {
+    slug: "fall-family-photos-guide",
+    title: "How to Plan a Fall Family Photoshoot on Chicago's North Shore",
+    excerpt:
+      "When to book, what to wear, and where to go for a fall family photoshoot in Skokie, Evanston, Wilmette, and the North Shore, from a local family photographer.",
+    date: "2026-09-17",
+    category: "Tips",
+    image: "/photos/family-portrait-frame.jpg",
+    seoTitle: "Fall Family Photoshoot Guide: Skokie and North Shore | Tovy Photography",
+    seoDescription:
+      "Planning a fall family photoshoot near Chicago? Here is when to book, what to wear, and where to go on the North Shore, plus mini session and pricing details.",
+    faqs: [
+      {
+        question: "When should I book a fall family photoshoot?",
+        answer:
+          "Book in August or early September if you want an October session. Fall is the most popular season for family photos on the North Shore, and the peak color window only lasts two to three weeks, so dates fill first.",
+      },
+      {
+        question: "What is the best week for fall color on the North Shore?",
+        answer:
+          "The second half of October is usually the peak color window here, though it shifts a little each year with the weather. I watch the trees each season and help clients pick the right week as the date gets closer.",
+      },
+      {
+        question: "What should we wear for a fall family photoshoot?",
+        answer:
+          "Warm neutrals like cream, olive, rust and navy photograph best against fall color. Coordinate two or three colors across the family and bring a layer you can add or remove as the temperature changes.",
+      },
+      {
+        question: "Should we book a mini session or a full session for fall?",
+        answer:
+          "A 30-minute mini session is enough for an immediate family that wants a holiday card or a quick yearly update. A Classic or Full session gives extended families and multigenerational groups room to include everyone.",
+      },
+      {
+        question: "How much does a fall family photoshoot cost?",
+        answer:
+          "My fall sessions are priced the same as any season: $200 for a 30-minute Mini, $325 for a 60-minute Classic, and $500 for a 90-minute Full session, edited images and print rights included.",
+      },
+      {
+        question: "Can we bring our dog to a fall family photoshoot?",
+        answer:
+          "Yes. Pets are welcome at outdoor sessions, and fall's cooler weather actually makes it easier for a dog to stay comfortable and cooperative than a hot summer afternoon.",
+      },
+    ],
+    content: `
+<p>The best time for a fall family photoshoot on Chicago's North Shore is the last two or three weeks of October, when the leaves turn and the evening light softens into that warm golden color everyone pictures for a fall session. Because that window is short and popular, the families who get October dates are usually the ones who book in August.</p>
+
+<p>Here is everything else worth knowing before you plan yours.</p>
+
+<h2>Why fall is the season families ask for most</h2>
+
+<p>Two things happen at once in fall on the North Shore: the evening light gets lower and warmer earlier in the day, and the trees turn gold, amber and rust. That combination is why fall books up faster than any other season for me, for full family sessions and for the seasonal mini sessions I run in October.</p>
+
+<h3>When should I book a fall family photoshoot?</h3>
+
+<p>Book in August or early September if you want an October date. Fall is the most popular season for family sessions, and the peak color window on the North Shore only lasts two to three weeks, so the good dates and the best light go first.</p>
+
+<h3>What is the best week for fall color on the North Shore?</h3>
+
+<p>It shifts a little every year depending on temperature and rainfall, but the second half of October is usually the sweet spot for peak color here. I keep an eye on the trees each season and will help you pick the exact week once we are getting close, rather than locking in a date months out and hoping the color lines up.</p>
+
+<h2>What to wear for a fall session</h2>
+
+<h3>What should we wear for a fall family photoshoot?</h3>
+
+<p>Warm neutrals and soft layers photograph best against fall color: cream, olive, rust, mustard, navy. Coordinate two or three colors across the family instead of matching everyone exactly, and add a layer like a light sweater or flannel you can take off if the afternoon warms up. I go through this in more detail, with what to skip, in <a href="/blog/what-to-wear-family-photo-session">what to wear for your family photo session</a>.</p>
+
+<h2>Where to go</h2>
+
+<h3>Where are the best fall family photo locations near Skokie?</h3>
+
+<p>Wooded, tree-lined spots do the most work in fall because the color is the whole point. I photographed a family session at <a href="/gallery/family/keay-nature-center-wilmette-family-session">Keay Nature Center in Wilmette</a>, and those same wooded paths turn beautiful shades of gold and amber once the leaves change. Emily Oaks Nature Center in Skokie and Harms Woods on the Skokie and Glenview border are two more spots with the mature tree canopy that makes fall color look its best.</p>
+
+<p>If you would rather stay indoors or the weather does not cooperate, a session at home works just as well in fall as any other time of year. I photographed a family at the <a href="/gallery/family/glickman-family-skokie-library">Skokie Public Library</a>, in and around the stacks and out on the plaza, which makes a good rainy-day option too.</p>
+
+<h2>Mini session or full session</h2>
+
+<h3>Should we book a mini session or a full session for fall?</h3>
+
+<p>A 30-minute mini session is enough if you want an updated set of photos or a holiday card and your family is just the immediate crew. My <a href="/sessions/mini-sessions">fall mini sessions</a> run in October at one location. If you have a larger or multigenerational group, want time for the kids to warm up, or would like photos at more than one spot, a Classic or Full <a href="/sessions/family-photography">family session</a> gives you the room for that.</p>
+
+<h2>What it costs</h2>
+
+<h3>How much does a fall family photoshoot cost?</h3>
+
+<p>My fall sessions cost the same as any season. The Mini is $200 for 30 minutes and 10 edited images. The Classic is $325 for 60 minutes and 20 images, and it is the most popular choice for families with young kids. The Full is $500 for 90 minutes and 30 images, best for extended family or more than one location. Every package includes a private online gallery and full print rights.</p>
+
+<p>If you want an October date, the best time to reach out is now. <a href="/contact">Tell me about your family</a> and I will help you find a date before the good ones on the calendar are gone.</p>
+`,
+  },
 ];

@@ -293,6 +293,7 @@ export const services: Record<string, ServicePage> = {
       { label: "View the Family Gallery", href: "/gallery/family" },
       { label: "What to Wear for Family Photos", href: "/blog/what-to-wear-family-photo-session" },
       { label: "Family Photo Locations in Skokie", href: "/blog/best-family-photo-locations-skokie-north-shore" },
+      { label: "Fall Family Photoshoot Guide", href: "/blog/fall-family-photos-guide" },
       { label: "Mini Sessions", href: "/sessions/mini-sessions" },
     ],
     cta: {
@@ -781,6 +782,7 @@ export const services: Record<string, ServicePage> = {
     related: [
       { label: "Family Photography", href: "/sessions/family-photography" },
       { label: "Best Family Photo Locations in Skokie", href: "/blog/best-family-photo-locations-skokie-north-shore" },
+      { label: "Fall Family Photoshoot Guide", href: "/blog/fall-family-photos-guide" },
       { label: "Sessions and Pricing", href: "/sessions" },
     ],
     cta: {
