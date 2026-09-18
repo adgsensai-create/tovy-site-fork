@@ -11,15 +11,27 @@
 - **GitHub:** https://github.com/tovypics-cell/gabi-photography-site
 
 ## Deploy Workflow
+Vercel is linked to the GitHub repo (since 2026-09-17). **Merging a PR into `main` deploys to production automatically.** That is the normal publish path. Do not run manual deploys for content.
+
 ```bash
 export PATH="/Users/gabiamrami/.local/node/bin:$PATH"
 cd /Users/gabiamrami/gabi-photography-site
 # Preview locally:
 npm run dev
-# Deploy to production:
-vercel deploy --prod --yes --token <VERCEL_TOKEN>
+# Ship a change: commit on a branch, push, open a PR, Gabi merges. Vercel deploys main.
+# Emergency manual deploy only (CLI is logged in on this Mac):
+npx vercel deploy --prod --yes
 ```
-Ask Gabi for the Vercel token if needed. Do NOT store it here.
+No Vercel token is stored anywhere in this repo. Do NOT add one.
+
+## Weekly Content Loop
+A launchd job (`com.tovy.weekly-page`, Mondays 9:00) runs `scripts/weekly-page.sh`, which writes the next `"queued"` page from `content/queue.json` with `claude -p`, verifies the build, opens a PR on a `content/<slug>` branch, and texts Gabi. Publishing is Gabi merging that PR. Details:
+- Plan and priorities: `content/seo-plan.md`. Queue order is the publish order.
+- Writer rules: `scripts/weekly-page-prompt.md` (brand rules, answer-first format, no invented numbers, real locations only).
+- `scripts/mark-published.sh` flips queue items to `"published"` once their PR is merged. It runs at the start of every weekly run.
+- Private settings (iMessage number, Claude token) live in `~/.config/tovy-weekly/env`, not in git.
+- Log: `~/Library/Logs/tovy-weekly-page.log`. Dry run: `scripts/weekly-page.sh --dry-run`.
+- To skip or reorder a page, edit `content/queue.json` on a branch and merge it.
 
 ## Brand Identity
 - **Tagline:** "Seeing the good in your world"
