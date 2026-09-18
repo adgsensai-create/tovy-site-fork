@@ -91,7 +91,7 @@ export default function HomePage() {
       { "@type": "City", name: "Wilmette" },
       { "@type": "City", name: "Chicago" },
     ],
-    priceRange: "$180-$375",
+    priceRange: "$200-$500",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5",
@@ -295,7 +295,7 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal animation="fade-up" delay={150}>
             <p className="mb-4 text-charcoal-light leading-relaxed">
-              Sessions start at <span className="font-semibold text-charcoal">$180</span> and include
+              Sessions start at <span className="font-semibold text-charcoal">$200</span> and include
               professionally edited digital images.
             </p>
             <p className="mb-8 text-charcoal-light">

@@ -1,17 +1,49 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const heroSlides = [
+const heroSlides: { src: string; alt: string; objectPosition?: string }[] = [
+  {
+    src: "/photos/hero-engagement-lift.jpg",
+    alt: "Engaged couple embracing beneath hanging flowers at Garfield Park Conservatory in Chicago",
+  },
   {
     src: "/photos/boy-curtain-window.jpg",
     alt: "Little boy peeking out from window blinds — candid childhood photography",
   },
   {
-    src: "/photos/hero-engagement-lift.jpg",
-    alt: "Engaged couple embracing beneath hanging flowers at Garfield Park Conservatory in Chicago",
+    src: "/photos/hero-mom-lift-kiss-bw.jpg",
+    alt: "Black and white photo of mom lifting and kissing her laughing curly-haired daughter by the pond — family photography",
+  },
+  {
+    src: "/photos/hero-newborn-window-floral.jpg",
+    alt: "Parents cradling their newborn baby in a floral romper by the window — natural light newborn photography",
+  },
+  {
+    src: "/photos/hero-kids-lake-framed.jpg",
+    alt: "Four kids by the lake framed through their parents holding hands — creative family photography",
+  },
+  {
+    src: "/photos/hero-boy-laugh-mom-bw.jpg",
+    alt: "Black and white photo of laughing boy sticking his tongue out on mom's lap — playful family photography",
+  },
+  {
+    src: "/photos/hero-family-four-canopy-2.jpg",
+    alt: "Family of four smiling under a green tree canopy — daughter on dad's shoulders, baby on mom's hip",
+  },
+  {
+    src: "/photos/hero-family-kids-lift.jpg",
+    alt: "Parents lifting their laughing toddler and daughter toward the camera in the park — playful family photography",
+  },
+  {
+    src: "/photos/hero-yoga-lake-sunset.jpg",
+    alt: "Dancer's pose yoga portrait by the lake at sunset — lifestyle photography",
+  },
+  {
+    src: "/photos/hero-newborn-garden-tree.jpg",
+    alt: "Parents cradling their newborn baby girl in the garden — outdoor newborn photography",
   },
   {
     src: "/photos/hero-family-baby-smile.jpg",
@@ -19,32 +51,47 @@ const heroSlides = [
     objectPosition: "50% top",
   },
   {
-    src: "/photos/parents-newborn-window.jpg",
-    alt: "Parents holding newborn baby by window — natural light newborn photography",
-  },
-  {
     src: "/photos/newborn-skyline.jpg",
     alt: "Newborn baby held by parents with city skyline — newborn photography session",
   },
   {
-    src: "/photos/kids-kiss-couch.jpg",
-    alt: "Brother kissing sister on the couch — candid lifestyle family photography",
+    src: "/photos/parents-newborn-window.jpg",
+    alt: "Parents holding newborn baby by window — natural light newborn photography",
   },
   {
-    src: "/photos/family-walking-playful.jpg",
-    alt: "Family walking together, parents swinging toddler — playful family photography",
+    src: "/photos/hero-lakeside-hug-2.jpg",
+    alt: "Two women hugging lakeside in white dresses at golden hour — candid photography",
   },
 ];
 
 export default function HeroSlideshow() {
   const [current, setCurrent] = useState(0);
 
+  // Depending on `current` resets the 4s timer whenever the slide changes,
+  // so a manual swipe gets a full 4 seconds before auto-advance resumes.
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroSlides.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [current]);
+
+  // Touch swipe support
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart.current || e.changedTouches.length === 0) return;
+    const dx = e.changedTouches[0].clientX - touchStart.current.x;
+    const dy = e.changedTouches[0].clientY - touchStart.current.y;
+    touchStart.current = null;
+    // Only treat as a swipe when clearly horizontal (don't hijack page scroll)
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      if (dx < 0) setCurrent((prev) => (prev + 1) % heroSlides.length);
+      else setCurrent((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+    }
+  };
 
   return (
     <>
@@ -85,9 +132,11 @@ export default function HeroSlideshow() {
 
               {/* Image carousel — starts below the top of the pink, overflows past the bottom */}
               <div className="relative z-10 pt-12 lg:pt-16">
-                <div 
+                <div
                   className="relative aspect-[2/3] w-full overflow-hidden"
                   style={{ marginBottom: "-18%" }}
+                  onTouchStart={onTouchStart}
+                  onTouchEnd={onTouchEnd}
                 >
                   {heroSlides.map((slide, i) => (
                     <div
@@ -142,7 +191,11 @@ export default function HeroSlideshow() {
           <div className="pt-10" />
           
           {/* Image area */}
-          <div className="relative w-full aspect-[5/7]">
+          <div
+            className="relative w-full aspect-[5/7]"
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          >
             {heroSlides.map((slide, i) => (
               <div
                 key={i}

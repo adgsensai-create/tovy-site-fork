@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { checkAdminAuth } from "@/lib/admin-auth";
-import { addPhotosBatch, deletePhoto, setCoverPhoto } from "@/lib/client-galleries";
+import { addPhotosBatch, deletePhoto, getGalleriesData, reconcilePhotos, setCoverPhoto } from "@/lib/client-galleries";
 
 function generateId(): string {
   const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -36,6 +36,11 @@ export async function POST(
       return NextResponse.json({ photos: added, count: added.length });
     }
 
+    if (body.action === "reconcile") {
+      const { recovered, total } = await reconcilePhotos(id);
+      return NextResponse.json({ recovered, total });
+    }
+
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
@@ -45,21 +50,46 @@ export async function POST(
     const file = formData.get("photo") as File | null;
     if (!file) return NextResponse.json({ error: "No file" }, { status: 400 });
 
+    // Filename-based dedup: if this gallery already contains a photo with the
+    // same original filename, skip the upload entirely. Lets the client
+    // re-select the whole batch after a partial failure and only pay for the
+    // missing files.
+    try {
+      const data = await getGalleriesData();
+      const gallery = data.galleries.find((g) => g.id === id);
+      if (gallery?.photos.some((p) => p.filename === file.name)) {
+        return NextResponse.json({ skipped: true, reason: "duplicate", filename: file.name }, { status: 200 });
+      }
+    } catch { /* metadata read failed — proceed to upload rather than block */ }
+
     const photoId = generateId();
     const ext = file.name.split(".").pop() || "jpg";
-    const blobPath = `galleries/${id}/${photoId}.${ext}`;
+    // Encode the original filename into the blob path so that scans (used
+    // when the metadata write fails) can recover the original name and
+    // preserve numeric sort order.
+    const safeName = file.name.replace(/[/?#%]/g, "_");
+    const blobPath = `galleries/${id}/${photoId}__${safeName}`;
+    // Legacy path (used for pre-existing blobs): `galleries/<id>/<photoId>.<ext>`
+    void ext;
 
-    const blob = await put(blobPath, file, {
-      access: "public",
-      contentType: file.type || "image/jpeg",
-    });
+    try {
+      const blob = await put(blobPath, file, {
+        access: "public",
+        contentType: file.type || "image/jpeg",
+      });
 
-    // Return the blob URL — client will batch-register all at the end
-    return NextResponse.json({
-      photoId,
-      url: blob.url,
-      filename: file.name,
-    }, { status: 201 });
+      // Return the blob URL — client will batch-register all at the end
+      return NextResponse.json({
+        photoId,
+        url: blob.url,
+        filename: file.name,
+      }, { status: 201 });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unknown blob upload error";
+      // Quota errors are 507 (Insufficient Storage). Other blob errors → 502.
+      const status = message.toLowerCase().includes("quota") ? 507 : 502;
+      return NextResponse.json({ error: message }, { status });
+    }
   }
 
   return NextResponse.json({ error: "Unsupported content type" }, { status: 400 });

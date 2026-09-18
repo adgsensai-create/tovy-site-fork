@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string; // YYYY-MM-DD
   category: string;
   image: string | null; // path to featured image, null for placeholder
+  imagePosition?: string; // CSS object-position for cover crop (e.g. "center bottom")
   content: string; // HTML content
   seoTitle?: string;
   seoDescription?: string;
@@ -251,7 +252,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Wondering about maternity photos? Here's everything you need to know about timing, outfit ideas, what the session looks like, and why it's worth it.",
     date: "2026-03-26",
     category: "Maternity",
-    image: null,
+    image: "/photos/maternity-side-profile-bw.jpg",
+    imagePosition: "center 70%",
     seoTitle: "Maternity Photos: When to Book & What to Wear | Skokie Maternity Photographer | Tovy Photography",
     seoDescription: "Everything you need to know about maternity photography sessions. When to book, what to wear, in-home vs outdoor, and why it's worth it. Serving Skokie, Evanston & Chicago's North Shore.",
     content: `
@@ -317,6 +319,165 @@ export const blogPosts: BlogPost[] = [
 <p>Whether you're in your second trimester or already in the home stretch, <a href="/contact">reach out</a> and let's plan something beautiful. I only take a limited number of sessions each month so every family gets the attention they deserve.</p>
 
 <p>Serving expecting moms in Skokie, Evanston, Lincolnwood, Wilmette, and across Chicago's North Shore.</p>
+`,
+  },
+  {
+    slug: "outdoor-family-photo-locations-north-shore-chicago",
+    title: "The Best Outdoor Family Photo Locations on Chicago's North Shore",
+    excerpt: "From Glencoe beaches and the Chicago Botanic Garden to Fort Sheridan, Gillson Park, and quieter spots in Evanston and Skokie, here are the outdoor family photo locations I return to again and again across Chicago's North Shore.",
+    date: "2026-06-15",
+    category: "Locations",
+    image: "/photos/north-shore-family-tall-grasses.jpg",
+    seoTitle: "Best Outdoor Family Photo Locations on Chicago's North Shore | Tovy Photography",
+    seoDescription: "A North Shore family photographer's guide to the best outdoor family photo locations near Chicago, from Glencoe beaches and the Chicago Botanic Garden to Fort Sheridan, Gillson Park, and quieter spots in Evanston and Skokie.",
+    content: `
+<p>One of the questions I get asked most often is some version of "where should we actually take our pictures?" And I love it, because choosing the right spot is half the magic. As a Skokie-based photographer, I spend a lot of my time scouting outdoor family photo locations across Chicago's North Shore, and I've built a detailed mental map of the spots that photograph beautifully in every season, and the ones that look gorgeous in person but turn into a sea of harsh shadows and parking headaches the moment you show up with three kids and a stroller.</p>
+
+<p>So let me save you the trial and error. These are the outdoor family photo locations I return to again and again, why they work, and how to get the most out of each one.</p>
+
+<h2>What Makes a Great Outdoor Family Photo Location</h2>
+
+<p>Before we get into specific spots, it helps to know what I'm actually looking for when I scout. A great location gives us a few different "scenes" within a short walk, so we're not marching tired toddlers half a mile between shots. It has soft, open shade or a tree line that filters the light, which keeps everyone from squinting. And it has a backdrop that feels like <em>you</em>, whether that's the drama of Lake Michigan or the cozy texture of a tree-lined path.</p>
+
+<p>The other thing I weigh constantly is timing. Even the most beautiful location on the North Shore looks flat and washed out at noon. The hour after sunrise and the 90 minutes before sunset, what we call golden hour, are when these places truly come alive.</p>
+
+<h2>Glencoe: Beach Drama Meets Garden Variety</h2>
+
+<p>If I had to pick the single most versatile area for outdoor family photo locations on the North Shore, Glencoe would be at the top of my list. Glencoe Beach gives us those striking Lake Michigan backdrops, open water, soft sand, and a horizon that makes images feel cinematic. It's especially lovely in summer when the light skims across the water in the evening, and it works beautifully for everything from maternity sessions to big extended-family gatherings.</p>
+
+<p>A few minutes away, the Chicago Botanic Garden offers an entirely different mood. English gardens, birch groves, prairie grasses, and those iconic Japanese garden bridges mean we can create real variety without driving all over town. It's one of the few places where a single session can feel like three completely different shoots.</p>
+
+<h2>Highland Park and Fort Sheridan: Quiet, Natural, Free</h2>
+
+<p>A little farther north, Highland Park and the Fort Sheridan area are some of my favorite under-the-radar outdoor family photo locations. Fort Sheridan gives us a wonderful mix, wooded paths, open fields of grass, and a peaceful stretch of beach that doesn't have the city skyline crowding the background. Parking is easy and free, dogs are welcome, and on a weekday evening you can often have whole stretches of it nearly to yourselves. For families who want a relaxed, nature-forward feel rather than a polished garden look, this is the one I recommend.</p>
+
+<h2>Winnetka and Wilmette: Classic North Shore Charm</h2>
+
+<p>For families who love a more timeless, storybook aesthetic, the lakefront parks in Winnetka and the Gillson Park area in Wilmette are hard to beat. Gillson Park in particular packs a remarkable amount of variety into one place: sandy beach, grassy hills, mature trees, and quiet little nooks that feel tucked away even on a busy summer weekend. It's a favorite of mine for milestone sessions and first-birthday shoots, because there's always somewhere shady for little ones to take a breather.</p>
+
+<p>Winnetka's lakefront, meanwhile, has that effortless North Shore elegance, manicured greenery, gentle bluffs, and water views that elevate even the simplest of family portraits.</p>
+
+<h2>Close to Home: Evanston, Skokie, and Lincolnwood</h2>
+
+<p>You don't have to drive far to find beautiful outdoor family photo locations, and I always remind my clients of that. Right here near home, Evanston's lakefront and the Northwestern campus area offer dramatic water views, leafy quads, and architecture that adds a sophisticated edge. The Skokie Northshore Sculpture Park is a fun, slightly unexpected backdrop full of texture and visual interest, and it's wonderfully convenient for families based in <a href="/locations/skokie">Skokie</a> or <a href="/locations/lincolnwood">Lincolnwood</a> who'd rather keep things low-key and local.</p>
+
+<p>These closer-to-home spots are also my go-to recommendation for newborn families who'd prefer not to travel far, or for anyone squeezing a session into a busy weeknight before the kids melt down. If you're newer to the area, my post on <a href="/blog/best-family-photo-locations-skokie-north-shore">spring family photo locations in Skokie &amp; the North Shore</a> goes deeper on some of these closer-to-home spots.</p>
+
+<h2>How I Help You Choose the Right One</h2>
+
+<p>Here's the part I want you to hear most clearly: you don't have to figure this out alone. When we plan your session, I take into account your kids' ages and nap schedules, the vibe you're going for, the season, and even what you plan to wear, and then I match you with the location that will make all of it sing. A toddler-heavy summer shoot calls for something different than a sentimental fall maternity session, and that's exactly the kind of thing I love sorting out together. If you're still deciding on outfits, my guide on <a href="/blog/what-to-wear-family-photo-session">what to wear for family photos</a> pairs perfectly with picking your spot.</p>
+
+<p>Across all of these North Shore locations, Glencoe, Highland Park, Winnetka, Wilmette, Evanston, and right here in Skokie, my goal is the same: to find the place where your family feels most relaxed and most <em>yourselves</em>, because that's always where the best images happen.</p>
+
+<p>If you've been thinking about updating your family photos this year, summer on the North Shore is honestly one of the most beautiful windows we get. The light is long, the gardens are full, and the lake is at its best. I'd love to help you choose the perfect backdrop and capture this season of your family's life. <a href="/contact">Get in touch</a> and let's plan it together.</p>
+`,
+  },
+  {
+    slug: "best-time-of-day-outdoor-family-photos",
+    title: "The Best Time of Day for Outdoor Family Photos: A Chicago Photographer's Summer Guide",
+    excerpt: "Golden hour, early mornings with toddlers, overcast skies, and the midday window to avoid. A Skokie photographer's guide to timing your outdoor family session so the light works for you, not against you.",
+    date: "2026-07-03",
+    category: "Tips",
+    image: "/photos/golden-hour-family-lakeside.jpg",
+    seoTitle: "Best Time of Day for Outdoor Family Photos | Golden Hour Guide | Tovy Photography",
+    seoDescription: "Wondering the best time of day for outdoor family photos? A Skokie photographer shares golden hour timing, summer tips, and North Shore session advice.",
+    content: `
+<p>If there's one question I get more than any other before a summer shoot, it's this: what's the best time of day for outdoor family photos? It's a great question, and the answer matters more than most people realize. You can pick the perfect outfits, choose a beautiful park, and have kids in genuinely good moods, but if we're standing in a field at high noon in July, the light will fight us the entire time. Get the timing right, and everything else falls into place. As a photographer who specializes in family and newborn sessions here in Skokie, timing is the very first thing I plan around, and I want to walk you through exactly how I think about it.</p>
+
+<h2>Golden Hour Is the Best Time of Day for Outdoor Family Photos</h2>
+
+<p>When people talk about the best time of day for outdoor family photos, they're usually describing golden hour without knowing the name for it. Golden hour is the stretch of time in the hour or so after sunrise and the hour before sunset, when the sun sits low in the sky. That low angle does something magical: it softens the light, warms up every skin tone, stretches shadows into something gentle instead of harsh, and wraps your family in a glow that's almost impossible to fake.</p>
+
+<p>Here in the Chicago area during early July, the sun sets around 8:25 to 8:30 in the evening, which means I'll usually have families meet me around 7:00 p.m. for an evening session. That gives us a full window of that buttery, flattering light before the sun dips below the horizon. By contrast, if we shoot at 1:00 in the afternoon, the sun is directly overhead. That's when you get raccoon-eye shadows under everyone's brows, squinting kids, and blown-out bright spots that no amount of editing fully rescues. I know these summer skies well, and golden hour is where the best outdoor family photos live.</p>
+
+<h2>When Early Morning Beats the Evening</h2>
+
+<p>Golden hour isn't only an evening thing, and this is where a lot of families are surprised. Sunrise light is just as soft and beautiful as sunset light, and for certain families it's actually the better call. If you have little ones under about six, the evening golden hour can collide head-on with what parents affectionately call the witching hour, that stretch before bedtime when even the sweetest toddler starts to unravel.</p>
+
+<p>Young kids tend to be at their absolute best first thing in the morning, well-rested and cheerful and ready to play. A session that starts around 7:30 or 8:00 a.m. can be a total game changer with a busy toddler or a fussy baby. Morning light along the Lake Michigan shoreline in Evanston is stunning, and there's an added bonus: parks and beaches are quiet and nearly empty at that hour, so we're not weaving around crowds or waiting for a stroller to clear the frame. When I'm helping a family with young children decide, I almost always float a morning session as a serious option.</p>
+
+<h3>A Quick Note on Newborns</h3>
+
+<p>Newborn sessions are the exception to all of this. Those are best done indoors in the first couple of weeks, where I can fully control the temperature and the light and keep your baby cozy and sleepy. If you're expecting, timing works differently, and I break down exactly when to schedule in my guide on <a href="/blog/when-to-book-newborn-photos-what-to-expect">the best time to book a newborn session</a>, so check that out if a little one is on the way.</p>
+
+<h2>What About Overcast Days?</h2>
+
+<p>Parents often panic when they see clouds in the forecast, but an overcast sky is honestly one of my favorite conditions to shoot in. Think of a thick layer of clouds as nature's giant softbox: it spreads the light evenly across everyone's face, erases harsh shadows, and lets us shoot comfortably even in the middle of the day. So if we've booked a mid-morning session in Wilmette and the sky turns gray, don't cancel on me. Some of the most tender, evenly lit family portraits I take happen under exactly those clouds. Bright, hazy overcast is a gift.</p>
+
+<p>The time I genuinely steer families away from is that harsh midday window between roughly noon and 2:00 p.m. on a clear, cloudless day. The overhead sun is unforgiving, and while I can work with almost anything, I'd rather set us up to win from the start than spend the whole session chasing patches of shade.</p>
+
+<h2>How Chicago's Seasons Shift the Best Time of Day</h2>
+
+<p>One thing worth understanding is that the best time of day for outdoor family photos shifts with the calendar. Right now in the heart of summer, evening golden hour lands late, close to 7:00 or 7:30 p.m., which can be past a baby's bedtime. Come autumn, when the North Shore trees turn and everyone wants those warm fall tones, the sun sets much earlier, so a golden hour session might start at 5:00 p.m. or even 4:30. In the depths of a Chicago winter, sunset golden hour can arrive as early as 3:30 in the afternoon, which actually makes it very family-friendly for nap schedules.</p>
+
+<p>This is exactly why I build every session around the sunset and sunrise times for that specific date rather than picking a generic hour. When you reach out about booking, one of the first things I'll do is look up the light for your preferred day and suggest a start time down to the minute. Beautiful <a href="/blog/outdoor-family-photo-locations-north-shore-chicago">locations across the North Shore</a> all photograph differently depending on when we arrive, and dialing in the timing is half the craft.</p>
+
+<h2>So, When Should Your Family Book?</h2>
+
+<p>If I had to sum it up simply: for most families with older kids, an evening golden hour session about an hour before sunset is the sweet spot for the best outdoor family photos. If you've got a toddler or a baby, lean toward early morning when their moods are sunniest and the parks are calm. On overcast days, we have flexibility to shoot almost anytime. And on a bright, clear day, we'll happily skip the harsh midday hours in favor of that soft, low, glowing light.</p>
+
+<p>The truth is that no two families run on the same clock, and the best time of day for your outdoor photos depends on your kids, your routine, and the season we're shooting in. That's the part I love helping with. <a href="/contact">Tell me a little about your family</a> and the day you have in mind, and I'll map out the perfect window so all you have to do is show up and be together.</p>
+`,
+  },
+  {
+    slug: "engagement-photo-locations-north-shore-chicago",
+    title: "The Best Engagement Photo Locations on Chicago's North Shore",
+    excerpt: "You don't have to head downtown for stunning engagement photos. From Grosse Point Lighthouse and Gillson Park to the Chicago Botanic Garden and quiet Rosewood Beach, here are my favorite North Shore spots, and exactly why each one works.",
+    date: "2026-07-20",
+    category: "Locations",
+    image: "/photos/engagement-ring-hands-reaching.jpg",
+    seoTitle: "Best Engagement Photo Locations on Chicago's North Shore | Tovy Photography",
+    seoDescription: "A Skokie photographer's guide to the best engagement photo locations on Chicago's North Shore: beaches, gardens, lighthouses, and hidden gems in Evanston, Wilmette, Glencoe, and Highland Park.",
+    content: `
+<p>When couples ask me where to take their engagement photos, they almost always assume we need to head downtown. The Chicago skyline is gorgeous, no argument there, but as a photographer based in Skokie, I'm going to let you in on something: some of the most beautiful engagement photo locations in the Chicago area are right here on the North Shore, and most of them come without the crowds, the parking headaches, or the twelve other couples waiting for the same spot.</p>
+
+<p>If you want lakefront light, historic architecture, and gardens that look straight out of a storybook, the North Shore delivers. Here are the spots I recommend most often, and exactly why each one works.</p>
+
+<h2>Why Choose the North Shore for Your Engagement Photos?</h2>
+
+<p>Beyond the obvious beauty, there's a practical reason I love shooting engagement sessions up here: flexibility. Downtown sessions require permits at many locations, tight timing, and a plan B for when a film crew takes over your spot. On the North Shore, we can move at your pace. We can start at a beach in Evanston, drive ten minutes, and finish in a completely different landscape in Wilmette, two totally distinct looks in one session.</p>
+
+<p>The light is different, too. Along the lakefront from Evanston up through Glencoe, you get unobstructed eastern horizons. That means soft, glowing morning light over the water and rich golden-hour tones in the evening without skyscrapers throwing shadows across your photos.</p>
+
+<h2>My Favorite Engagement Photo Locations, Town by Town</h2>
+
+<h3>Grosse Point Lighthouse and Lighthouse Beach, Evanston</h3>
+
+<p>This is the spot I suggest when couples tell me they want something that feels romantic and timeless. The lighthouse itself gives you that classic, storybook backdrop, and the surrounding gardens bloom beautifully from late spring through early fall. Walk five minutes and you're on the beach with open water behind you. I like to time sessions here for the last 90 minutes before sunset, when the light turns the sand and the lighthouse brick a warm honey color.</p>
+
+<h3>Northwestern University Lakefill, Evanston</h3>
+
+<p>The Lakefill is one of the only places in the suburbs where you can get the downtown Chicago skyline in your photos. It sits far enough south along the lake that the city appears right on the horizon. So if you want that skyline without actually going downtown, this is my go-to. Bonus: the campus itself has stone archways and ivy that photograph beautifully, especially in autumn.</p>
+
+<h3>Gillson Park, Wilmette</h3>
+
+<p>If I could only shoot engagement sessions in one park for the rest of my career, it might be Gillson. It has everything: a wide sandy beach, a tree-lined lagoon, open lawns, and winding paths under mature willows. It's also right next to the Baha'i House of Worship, whose white lacework dome makes one of the most striking architectural backdrops anywhere in Chicagoland. Many couples don't realize the temple gardens are open to visitors. A few frames there and your gallery instantly feels like a destination shoot.</p>
+
+<h3>Chicago Botanic Garden, Glencoe</h3>
+
+<p>This one requires a photography permit, so plan ahead, but it's worth every bit of the paperwork. With 385 acres of themed gardens, there's a backdrop for every season and every style: the rose garden in June, the Japanese garden's quiet bridges, the waterfall garden, the English walled garden. When couples want a "garden party" feel or plan to dress up a bit more formally, this is where I send them. If you love that lush conservatory look, take a peek at this <a href="/blog/garfield-park-conservatory-engagement-photos-chicago">Garfield Park Conservatory engagement session</a> for a feel of how greenery photographs.</p>
+
+<h3>Rosewood Beach, Highland Park</h3>
+
+<p>Rosewood is a quieter, more intimate beach than the bigger lakefront parks, tucked below wooded bluffs. The boardwalk that runs along the shore gives us leading lines and texture, and because it's less trafficked, it feels like a private stretch of coastline. It's my pick for couples who want their session to feel like just the two of them, because up here, it usually is.</p>
+
+<h3>Downtown Highland Park and the Ravinia District</h3>
+
+<p>Not every couple is a beach couple, and that's okay. If your idea of a perfect date is coffee, a bookstore, and a stroll past storefronts, downtown Highland Park has charming brick streetscapes and murals that make for relaxed, editorial-feeling photos. It's a great option for an "everyday us" session, the kind of photos that look like a really well-documented Saturday together.</p>
+
+<h2>When Should You Schedule Your North Shore Engagement Session?</h2>
+
+<p>Here's what I tell every couple: think about your light first and your outfit second. The hour after sunrise and the 90 minutes before sunset, golden hour, will flatter every skin tone and every location on this list. Midday works at the Botanic Garden or under Gillson's tree cover, but on open beaches it creates harsh shadows I'd rather help you avoid. I go deeper on this in my guide to <a href="/blog/best-time-of-day-outdoor-family-photos">the best time of day for outdoor photos</a>.</p>
+
+<p>Season-wise, the North Shore truly has no bad month. Late spring brings blossoms to the lighthouse gardens, summer gives us warm beach evenings, October sets the lakefront bluffs on fire with color, and even winter sessions along an empty, snow-dusted beach have a quiet drama you can't get any other time of year.</p>
+
+<p>If you're planning to use your photos for save-the-dates, work backward from your mailing date and give yourself at least six to eight weeks for the session, gallery delivery, and printing.</p>
+
+<h2>A Few Tips Before Your Session</h2>
+
+<p>Wear shoes you can walk in, and bring the fancy pair to change into. Several of these locations involve sand, grass, or gravel paths. Plan two outfits if you'd like variety; a session that moves from Gillson Park to the Baha'i Temple can easily support a casual look and a dressed-up one. And leave room in your timeline to simply be together. The best engagement photos I take are never the posed ones. They're the in-between moments when you forget I'm there.</p>
+
+<p>I'm lucky to call this area home. From my home base in Skokie, every location on this list is within a 20-minute drive, and I know exactly where the light falls at each one, hour by hour. If you're dreaming about lakefront light, garden blooms, or a skyline on the horizon, <a href="/contact">get in touch</a> and let's find the spot that feels like <em>you</em>.</p>
 `,
   },
 ];

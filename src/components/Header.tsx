@@ -4,10 +4,17 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
+const navLinks: {
+  href: string;
+  label: string;
+  noIndexPage?: boolean;
+  dropdown?: { href: string; label: string }[];
+}[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/sessions", label: "Sessions & Pricing" },
+  // Service detail pages live under /sessions/* and are linked from the
+  // Sessions & Pricing page ("learn more" links), NOT from the main nav.
   {
     href: "/gallery",
     label: "Gallery",
@@ -25,8 +32,8 @@ const navLinks = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [galleryOpen, setGalleryOpen] = useState(false);
-  const [mobileGalleryOpen, setMobileGalleryOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -40,8 +47,8 @@ export default function Header() {
 
   useEffect(() => {
     setIsOpen(false);
-    setGalleryOpen(false);
-    setMobileGalleryOpen(false);
+    setOpenDropdown(null);
+    setMobileOpenDropdown(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -59,7 +66,7 @@ export default function Header() {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setGalleryOpen(false);
+        setOpenDropdown(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -85,12 +92,14 @@ export default function Header() {
           <div className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) =>
               link.dropdown ? (
-                <div key={link.href} className="relative" ref={dropdownRef}>
+                <div key={link.href} className="relative">
                   <button
-                    onClick={() => setGalleryOpen(!galleryOpen)}
-                    onMouseEnter={() => setGalleryOpen(true)}
+                    onClick={() =>
+                      setOpenDropdown(openDropdown === link.href ? null : link.href)
+                    }
+                    onMouseEnter={() => setOpenDropdown(link.href)}
                     className={`text-sm font-medium tracking-wider uppercase transition-colors hover:text-sage-dark flex items-center gap-1 ${
-                      pathname.startsWith("/gallery")
+                      pathname.startsWith(link.href)
                         ? "text-sage-dark"
                         : "text-charcoal"
                     }`}
@@ -98,7 +107,7 @@ export default function Header() {
                     {link.label}
                     <svg
                       className={`w-3 h-3 transition-transform duration-200 ${
-                        galleryOpen ? "rotate-180" : ""
+                        openDropdown === link.href ? "rotate-180" : ""
                       }`}
                       fill="none"
                       viewBox="0 0 24 24"
@@ -111,26 +120,28 @@ export default function Header() {
 
                   {/* Dropdown */}
                   <div
-                    onMouseEnter={() => setGalleryOpen(true)}
-                    onMouseLeave={() => setGalleryOpen(false)}
+                    onMouseEnter={() => setOpenDropdown(link.href)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                     className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200 ${
-                      galleryOpen
+                      openDropdown === link.href
                         ? "opacity-100 visible translate-y-0"
                         : "opacity-0 invisible -translate-y-1"
                     }`}
                   >
                     <div className="bg-white border border-charcoal/10 shadow-lg py-2 min-w-[160px]">
-                      <Link
-                        href="/gallery"
-                        className="block px-5 py-2 text-sm font-medium tracking-wider uppercase text-charcoal hover:text-sage-dark hover:bg-cream/50 transition-colors"
-                      >
-                        All
-                      </Link>
+                      {!link.noIndexPage && (
+                        <Link
+                          href={link.href}
+                          className="block px-5 py-2 text-sm font-medium tracking-wider uppercase text-charcoal hover:text-sage-dark hover:bg-cream/50 transition-colors"
+                        >
+                          All
+                        </Link>
+                      )}
                       {link.dropdown.map((sub) => (
                         <Link
                           key={sub.href}
                           href={sub.href}
-                          className={`block px-5 py-2 text-sm font-medium tracking-wider uppercase transition-colors hover:text-sage-dark hover:bg-cream/50 ${
+                          className={`block px-5 py-2 text-sm font-medium tracking-wider uppercase whitespace-nowrap transition-colors hover:text-sage-dark hover:bg-cream/50 ${
                             pathname === sub.href
                               ? "text-sage-dark"
                               : "text-charcoal"
@@ -196,9 +207,13 @@ export default function Header() {
             link.dropdown ? (
               <div key={link.href} className="flex flex-col items-center">
                 <button
-                  onClick={() => setMobileGalleryOpen(!mobileGalleryOpen)}
+                  onClick={() =>
+                    setMobileOpenDropdown(
+                      mobileOpenDropdown === link.href ? null : link.href
+                    )
+                  }
                   className={`font-[family-name:var(--font-cormorant)] text-4xl transition-colors hover:text-sage-dark flex items-center gap-2 ${
-                    pathname.startsWith("/gallery")
+                    pathname.startsWith(link.href)
                       ? "text-sage-dark"
                       : "text-charcoal"
                   }`}
@@ -206,7 +221,7 @@ export default function Header() {
                   {link.label}
                   <svg
                     className={`w-5 h-5 transition-transform duration-200 ${
-                      mobileGalleryOpen ? "rotate-180" : ""
+                      mobileOpenDropdown === link.href ? "rotate-180" : ""
                     }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -218,16 +233,20 @@ export default function Header() {
                 </button>
                 <div
                   className={`flex flex-col items-center gap-3 overflow-hidden transition-all duration-300 ${
-                    mobileGalleryOpen ? "max-h-60 mt-4 opacity-100" : "max-h-0 opacity-0"
+                    mobileOpenDropdown === link.href
+                      ? "max-h-60 mt-4 opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
-                  <Link
-                    href="/gallery"
-                    onClick={() => setIsOpen(false)}
-                    className="text-xl text-charcoal-light hover:text-sage-dark transition-colors"
-                  >
-                    All Galleries
-                  </Link>
+                  {!link.noIndexPage && (
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-xl text-charcoal-light hover:text-sage-dark transition-colors"
+                    >
+                      All
+                    </Link>
+                  )}
                   {link.dropdown.map((sub) => (
                     <Link
                       key={sub.href}

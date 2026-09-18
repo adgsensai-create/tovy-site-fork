@@ -120,7 +120,7 @@ export default function ContactPage() {
                     Quick Facts
                   </h3>
                   <ul className="space-y-2 text-sm text-charcoal-light">
-                    <li>• Sessions start at $180</li>
+                    <li>• Sessions start at $200</li>
                     <li>• 2-3 week turnaround</li>
                     <li>• In-home &amp; outdoor sessions</li>
                     <li>• Natural light photography</li>

@@ -78,13 +78,24 @@ export default function AdminGalleriesPage() {
 
   async function handleDelete(id: string, name: string) {
     if (!confirm(`Delete gallery for "${name}"? This removes all photos permanently.`)) return;
-    // Update UI immediately
-    setGalleries((prev) => prev.filter((g) => g.id !== id));
+    // Snapshot current state so we can roll back if the server delete fails.
+    let snapshot: typeof galleries | null = null;
+    setGalleries((prev) => { snapshot = prev; return prev.filter((g) => g.id !== id); });
     const pin = getPin();
-    await fetch(`/api/admin/galleries/${id}`, {
-      method: "DELETE",
-      headers: { "x-admin-pin": pin },
-    });
+    try {
+      const res = await fetch(`/api/admin/galleries/${id}`, {
+        method: "DELETE",
+        headers: { "x-admin-pin": pin },
+      });
+      if (!res.ok) {
+        const errText = await res.text();
+        alert(`Delete failed (${res.status}). ${errText.slice(0, 200)}`);
+        if (snapshot) setGalleries(snapshot);
+      }
+    } catch (err) {
+      alert(`Delete failed: ${err instanceof Error ? err.message : "network error"}`);
+      if (snapshot) setGalleries(snapshot);
+    }
   }
 
   async function handleExtend(id: string, days: number) {

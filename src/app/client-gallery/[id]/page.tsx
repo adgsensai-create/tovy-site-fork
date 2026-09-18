@@ -30,6 +30,264 @@ function useReveal() {
   return { ref, visible };
 }
 
+// ——— Gallery Wall Carousel ———
+const galleryWallSlides = [
+  {
+    src: "/photos/gallery-walls/wall-08.png",
+    alt: "Gallery wall layout - seven image collage with rattan chair",
+    description: "A ready-to-hang collection designed to turn your favorite moments into a display you'll see every day. Includes prints, hardware, and a hanging guide. No measuring, no guessing. The layout shown features 7 prints in a mix of sizes.",
+    price: "$350",
+  },
+  {
+    src: "/photos/gallery-walls/wall-02.png",
+    alt: "Gallery wall layout - three panel horizontal display",
+    description: "A clean, modern trio. Three frameless canvases that make a statement without taking over the room.",
+    price: "$1,000",
+  },
+  {
+    src: "/photos/gallery-walls/wall-03.png",
+    alt: "Gallery wall layout - eight frame gallery arrangement",
+    description: "The full gallery wall. Eight framed pieces in a curated layout that turns a blank wall into the favorite spot in your home.",
+    price: "$1,750",
+  },
+  {
+    src: "/photos/gallery-walls/wall-01.png",
+    alt: "Gallery wall layout - five float frame arrangement",
+    description: "Five float frames with a warm, layered feel. A premium arrangement that draws you in every time you walk by.",
+    price: "$2,000",
+  },
+];
+
+const galleryWallSlides5xbsrns6 = [
+  {
+    src: "/photos/gallery-walls-5xbsrns6/detail-frame.png",
+    alt: "The Detail Frame - four newborn detail photos in one square gold frame",
+    description: "4 photos in one square frame. Hands, nose, toes, all together in one place.",
+    price: "$200",
+  },
+  {
+    src: "/photos/gallery-walls-5xbsrns6/triptych.png",
+    alt: "The Triptych - three matching red frames with pink mat",
+    description: "3 matching frames, bold color, soft mat. A pop of personality for the nursery.",
+    price: "$425",
+  },
+  {
+    src: "/photos/gallery-walls-5xbsrns6/newborn-trio.png",
+    alt: "The Newborn Trio - three mixed style frames with portrait and details",
+    description: "3 frames, mixed styles. One big portrait paired with the tiny details.",
+    price: "$500",
+  },
+  {
+    src: "/photos/gallery-walls-5xbsrns6/column.png",
+    alt: "The Column - four photos stacked in a single tall dark frame",
+    description: "4 photos stacked in a single tall frame. Fits perfectly in a nursery or hallway.",
+    price: "$125",
+  },
+];
+
+const galleryWallSlides3myjm0yh = [
+  {
+    src: "/photos/gallery-walls-3myjm0yh/trio-v2.png",
+    alt: "The Trio - three silver frames with black and white photos above a bench",
+    description: "3 frames, clean and simple. Perfect above a bench, console, or bed.",
+    price: "$350",
+  },
+  {
+    src: "/photos/gallery-walls-3myjm0yh/staircase.png",
+    alt: "The Staircase - eight frames following a staircase wall",
+    description: "8 frames, designed to follow a staircase wall. A statement every time you walk by.",
+    price: "$1,100",
+  },
+  {
+    src: "/photos/gallery-walls-3myjm0yh/grid.png",
+    alt: "The Grid - eight frames in a clean uniform layout above a sofa",
+    description: "8 frames, clean, uniform layout. Bold and modern above a sofa or in a hallway.",
+    price: "$1,150",
+  },
+  {
+    src: "/photos/gallery-walls-3myjm0yh/mixed.png",
+    alt: "The Mixed Gallery - nine mixed frames above a bench",
+    description: "9 frames, mixed sizes and frame styles. The showstopper.",
+    price: "$1,200",
+  },
+];
+
+function GalleryWallCarousel({ slides = galleryWallSlides }: { slides?: typeof galleryWallSlides }) {
+  const [current, setCurrent] = useState(0);
+  const total = slides.length;
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % total);
+
+  return (
+    <div className="relative">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-lg shadow-lg bg-white">
+        {slides.map((slide, i) => (
+          <img
+            key={i}
+            src={slide.src}
+            alt={slide.alt}
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+              i === current ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+      </div>
+      {/* Arrows */}
+      {total > 1 && (
+        <>
+          <button
+            onClick={prev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white shadow-md flex items-center justify-center transition-colors"
+            aria-label="Previous"
+          >
+            <svg className="w-5 h-5 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white shadow-md flex items-center justify-center transition-colors"
+            aria-label="Next"
+          >
+            <svg className="w-5 h-5 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </>
+      )}
+      {/* Details */}
+      <div className="text-center mt-6 min-h-[6rem]">
+        <p className="text-charcoal-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto">{slides[current].description}</p>
+        <p className="font-[family-name:var(--font-cormorant)] text-2xl text-sage mt-3">{slides[current].price}</p>
+      </div>
+      {/* Dots */}
+      {total > 1 && (
+      <div className="flex justify-center gap-2 mt-4">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full transition-colors ${
+              i === current ? "bg-sage" : "bg-charcoal/20"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+      )}
+    </div>
+  );
+}
+
+// ——— Album Flipbook (9gy4ze1g) ———
+const albumPages9gy4ze1g = [
+  "/photos/album-9gy4ze1g/00-cover.jpg",
+  "/photos/album-9gy4ze1g/01-page-1.jpg",
+  "/photos/album-9gy4ze1g/02-page-2.jpg",
+  "/photos/album-9gy4ze1g/03-page-3.jpg",
+  "/photos/album-9gy4ze1g/04-page-4.jpg",
+  "/photos/album-9gy4ze1g/05-page-5.jpg",
+  "/photos/album-9gy4ze1g/06-page-6.jpg",
+  "/photos/album-9gy4ze1g/07-page-7.jpg",
+  "/photos/album-9gy4ze1g/08-page-8.jpg",
+  "/photos/album-9gy4ze1g/09-page-9.jpg",
+  "/photos/album-9gy4ze1g/10-page-10.jpg",
+  "/photos/album-9gy4ze1g/11-page-11.jpg",
+  "/photos/album-9gy4ze1g/12-endleaf.jpg",
+];
+
+function AlbumFlipbook({ pages }: { pages: string[] }) {
+  const [current, setCurrent] = useState(0);
+  const [flipping, setFlipping] = useState<null | "next" | "prev">(null);
+  const total = pages.length;
+
+  const go = (dir: "next" | "prev") => {
+    if (flipping) return;
+    if (dir === "next" && current >= total - 1) return;
+    if (dir === "prev" && current <= 0) return;
+    setFlipping(dir);
+    setTimeout(() => {
+      setCurrent((c) => (dir === "next" ? c + 1 : c - 1));
+      setFlipping(null);
+    }, 450);
+  };
+
+  const nextIndex = Math.min(current + 1, total - 1);
+  const prevIndex = Math.max(current - 1, 0);
+
+  return (
+    <div className="relative">
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ aspectRatio: "2400 / 1274", perspective: "2000px" }}
+      >
+        {/* Static back layer: the page we're flipping to */}
+        <img
+          src={pages[flipping === "next" ? nextIndex : flipping === "prev" ? prevIndex : current]}
+          alt={`Album page ${current + 1}`}
+          className="absolute inset-0 w-full h-full object-contain"
+          draggable={false}
+        />
+        {/* Flipping layer: the current page rotating away */}
+        {flipping && (
+          <div
+            className="absolute inset-0"
+            style={{
+              transformStyle: "preserve-3d",
+              transformOrigin: flipping === "next" ? "left center" : "right center",
+              animation: `${flipping === "next" ? "flipNext" : "flipPrev"} 0.45s ease-in-out forwards`,
+            }}
+          >
+            <img
+              src={pages[current]}
+              alt={`Album page ${current + 1}`}
+              className="absolute inset-0 w-full h-full object-contain"
+              style={{ backfaceVisibility: "hidden" }}
+              draggable={false}
+            />
+          </div>
+        )}
+        <style jsx>{`
+          @keyframes flipNext {
+            0% { transform: rotateY(0deg); box-shadow: 0 0 0 rgba(0,0,0,0); }
+            100% { transform: rotateY(-180deg); box-shadow: -20px 0 40px rgba(0,0,0,0.15); }
+          }
+          @keyframes flipPrev {
+            0% { transform: rotateY(0deg); box-shadow: 0 0 0 rgba(0,0,0,0); }
+            100% { transform: rotateY(180deg); box-shadow: 20px 0 40px rgba(0,0,0,0.15); }
+          }
+        `}</style>
+      </div>
+      {/* Arrows */}
+      <button
+        onClick={() => go("prev")}
+        disabled={current === 0 || !!flipping}
+        className="absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        aria-label="Previous page"
+      >
+        <svg className="w-5 h-5 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button
+        onClick={() => go("next")}
+        disabled={current === total - 1 || !!flipping}
+        className="absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        aria-label="Next page"
+      >
+        <svg className="w-5 h-5 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      {/* Page indicator */}
+      <p className="text-center text-xs text-charcoal/60 mt-4 uppercase tracking-wider">
+        {current === 0 ? "Cover" : `Spread ${current} of ${total - 1}`}
+      </p>
+    </div>
+  );
+}
+
 // ——— Grid photo with favorites + share ———
 function GridPhoto({ photo, index, onClick, isFav, onToggleFav, onShare }: {
   photo: Photo; index: number; onClick: () => void;
@@ -216,7 +474,14 @@ export default function ClientGalleryPage() {
   useEffect(() => {
     fetch(`/api/galleries/${galleryId}`)
       .then((res) => { if (!res.ok) throw new Error(); return res.json(); })
-      .then((data) => { setGallery(data); setLoading(false); })
+      .then((data) => {
+        // Trust the server's sort order — it uses a smart order that puts
+        // real camera filenames (IMG_*, DSC*) in numeric order and puts
+        // generated blob-name photos at the end in upload time order.
+        // (Re-sorting here would drop the upload-time secondary key.)
+        setGallery(data);
+        setLoading(false);
+      })
       .catch(() => { setError(true); setLoading(false); });
   }, [galleryId]);
 
@@ -513,6 +778,163 @@ export default function ClientGalleryPage() {
           )}
         </div>
       </section>
+
+      {/* Products — shown by default on every client gallery.
+          DEFAULTS: "Example Custom Photo Album" / "Example Gallery Walls" subtitles,
+                    8x10 hardcover album, starting at $240.
+          Excluded: galleries with their own specialized section
+                    (5xbsrns6 album-only, 9gy4ze1g flipbook).
+          Legacy overrides (keep older "Custom Photo Album" / 10x10 / different price):
+                    mluj1gve ($325), 3myjm0yh ($160, different video), hvngbzt6 ($325). */}
+      {!(galleryId === "5xbsrns6" || galleryId === "9gy4ze1g") && (() => {
+        const isLegacy = galleryId === "mluj1gve" || galleryId === "3myjm0yh";
+        const albumTitle = isLegacy ? "Custom Photo Album" : "Example Custom Photo Album";
+        const wallsTitle = isLegacy ? "Gallery Walls" : "Example Gallery Walls";
+        const albumDimensions = isLegacy ? "10x10" : "8x10";
+        const albumPrice = galleryId === "3myjm0yh" ? "$160" : isLegacy ? "$325" : "$240";
+        const albumVideo = galleryId === "3myjm0yh" ? "/photos/flipbook-album-2.mp4" : "/photos/flipbook-album.mp4";
+        const wallsSlides = galleryId === "3myjm0yh" ? galleryWallSlides3myjm0yh : galleryWallSlides;
+        return (
+        <section className="px-6 py-16 md:py-24 bg-cream">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl text-charcoal text-center mb-16">
+              Make your photos come to life
+            </h2>
+
+            {/* Photo Album */}
+            <div className="mb-20">
+              <h3 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl text-charcoal text-center mb-8">
+                {albumTitle}
+              </h3>
+              <video
+                className="w-full rounded-lg shadow-lg"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src={albumVideo} type="video/mp4" />
+              </video>
+              <p className="mt-8 text-charcoal-light text-sm md:text-base leading-relaxed">
+                Starting at {albumPrice}. A beautiful {albumDimensions} hardcover album designed with your favorite images. Everything you see here is fully customizable. Add pages, swap photos, adjust the layout, change the cover. It&apos;s your story, designed your way. Final pricing depends on the pages and extras you choose.
+              </p>
+              <div className="text-center mt-6">
+                <a
+                  href="sms:8475422073"
+                  className="inline-block px-8 py-3 bg-sage text-white text-sm font-medium uppercase tracking-[0.2em] hover:bg-sage-dark transition-colors"
+                >
+                  Order Today
+                </a>
+              </div>
+            </div>
+
+            {/* Gallery Walls */}
+            <div>
+              <h3 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl text-charcoal text-center mb-2">
+                {wallsTitle}
+              </h3>
+              <p className="text-sm text-center text-charcoal/60 mb-8">
+                Everything you see here is fully customizable. These are just samples.
+              </p>
+              <GalleryWallCarousel slides={wallsSlides} />
+              <div className="text-center mt-8">
+                <a
+                  href="sms:8475422073"
+                  className="inline-block px-8 py-3 bg-sage text-white text-sm font-medium uppercase tracking-[0.2em] hover:bg-sage-dark transition-colors"
+                >
+                  Order Today
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        );
+      })()}
+
+      {/* Products — 5xbsrns6 */}
+      {galleryId === "5xbsrns6" && (
+        <section className="px-6 py-16 md:py-24 bg-cream">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl text-charcoal text-center mb-16">
+              Make your photos come to life
+            </h2>
+
+            {/* Photo Album */}
+            <div className="mb-20">
+              <h3 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl text-charcoal text-center mb-8">
+                Custom Photo Album
+              </h3>
+              <video
+                className="w-full rounded-lg shadow-lg"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/photos/flipbook-album-3.mp4" type="video/mp4" />
+              </video>
+              <p className="mt-8 text-charcoal-light text-sm md:text-base leading-relaxed">
+                Starting at $180. A beautiful 10x10 hardcover album designed with your favorite images. Everything you see here is fully customizable. Add pages, swap photos, adjust the layout, change the cover. It&apos;s your story, designed your way. Final pricing depends on the pages and extras you choose.
+              </p>
+              <div className="text-center mt-6">
+                <a
+                  href="sms:8475422073"
+                  className="inline-block px-8 py-3 bg-sage text-white text-sm font-medium uppercase tracking-[0.2em] hover:bg-sage-dark transition-colors"
+                >
+                  Order Today
+                </a>
+              </div>
+            </div>
+
+            {/* Gallery Walls */}
+            <div>
+              <h3 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl text-charcoal text-center mb-2">
+                Gallery Walls
+              </h3>
+              <p className="text-sm text-center text-charcoal/60 mb-8">
+                Everything you see here is fully customizable. These are just samples.
+              </p>
+              <GalleryWallCarousel slides={galleryWallSlides5xbsrns6} />
+              <div className="text-center mt-8">
+                <a
+                  href="sms:8475422073"
+                  className="inline-block px-8 py-3 bg-sage text-white text-sm font-medium uppercase tracking-[0.2em] hover:bg-sage-dark transition-colors"
+                >
+                  Order Today
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Album-only — 9gy4ze1g (flipbook) */}
+      {galleryId === "9gy4ze1g" && (
+        <section className="px-6 py-16 md:py-24 bg-cream">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl text-charcoal text-center mb-16">
+              Make your photos come to life
+            </h2>
+            <div>
+              <h3 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl text-charcoal text-center mb-8">
+                Custom Photo Album
+              </h3>
+              <AlbumFlipbook pages={albumPages9gy4ze1g} />
+              <p className="mt-8 text-charcoal-light text-sm md:text-base leading-relaxed">
+                Starting at $160. A beautiful 10x10 hardcover album designed with your favorite images. Everything you see here is fully customizable. Add pages, swap photos, adjust the layout, change the cover. It&apos;s your story, designed your way. Final pricing depends on the pages and extras you choose.
+              </p>
+              <div className="text-center mt-6">
+                <a
+                  href="sms:8475422073"
+                  className="inline-block px-8 py-3 bg-sage text-white text-sm font-medium uppercase tracking-[0.2em] hover:bg-sage-dark transition-colors"
+                >
+                  Order Today
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Footer CTA */}
       <section className="px-6 py-16 md:py-24 bg-white">

@@ -49,20 +49,34 @@ export default function ManageGalleryPage() {
   const router = useRouter();
   const params = useParams();
   const galleryId = params.id as string;
+  // Serial delete queue: only one DELETE in flight at a time to avoid
+  // metadata read-modify-write race on the server.
+  const deleteQueueRef = useRef<Promise<unknown>>(Promise.resolve());
+  // After first successful load, don't redirect to /admin/galleries if a
+  // refresh briefly can't find the gallery (stale cache / pointer lag).
+  const hasLoadedOnceRef = useRef(false);
 
-  const fetchGallery = useCallback(async () => {
+  const fetchGallery = useCallback(async ({ allowRedirect = true }: { allowRedirect?: boolean } = {}) => {
     const pin = getPin();
     if (!pin) { router.replace("/admin"); return; }
 
     const res = await fetch("/api/admin/galleries", {
       headers: { "x-admin-pin": pin },
+      cache: "no-store",
     });
     if (res.status === 401) { router.replace("/admin"); return; }
     const data = await res.json();
     const found = data.galleries?.find((g: Gallery) => g.id === galleryId);
-    if (!found) { router.replace("/admin/galleries"); return; }
+    if (!found) {
+      // Only bounce on initial load. Mid-session refresh hiccups should not eject the user.
+      if (allowRedirect && !hasLoadedOnceRef.current) {
+        router.replace("/admin/galleries");
+      }
+      return;
+    }
     setGallery(found);
     setLoading(false);
+    hasLoadedOnceRef.current = true;
   }, [galleryId, router]);
 
   useEffect(() => { fetchGallery(); }, [fetchGallery]);
@@ -130,6 +144,8 @@ export default function ManageGalleryPage() {
     let failed = 0;
 
     // Step 1: Upload each file to blob storage (with client-side resize)
+    let firstError = "";
+    let skipped = 0;
     for (let i = 0; i < total; i++) {
       setUploadProgress(`Processing ${i + 1} of ${total}...`);
 
@@ -138,7 +154,7 @@ export default function ManageGalleryPage() {
         const formData = new FormData();
         formData.append("photo", resized);
 
-        setUploadProgress(`Uploading ${i + 1} of ${total}...`);
+        setUploadProgress(`Uploading ${i + 1} of ${total}${skipped ? ` (${skipped} already in gallery)` : ""}...`);
 
         const res = await fetch(`/api/admin/galleries/${galleryId}/photos`, {
           method: "POST",
@@ -148,15 +164,36 @@ export default function ManageGalleryPage() {
 
         if (res.ok) {
           const data = await res.json();
-          results.push({
-            url: data.url,
-            filename: data.filename,
-            photoId: data.photoId,
-          });
+          if (data.skipped) {
+            skipped++;
+          } else {
+            results.push({
+              url: data.url,
+              filename: data.filename,
+              photoId: data.photoId,
+            });
+          }
         } else {
           const errText = await res.text();
           console.error("Upload failed", res.status, errText);
+          if (!firstError) {
+            // Extract useful message from the response (Vercel Blob puts quota errors in the text)
+            try {
+              const parsed = JSON.parse(errText);
+              firstError = parsed.error || errText.slice(0, 200);
+            } catch {
+              firstError = errText.slice(0, 200);
+            }
+          }
           failed++;
+          // Storage quota errors will fail every file — stop retrying after 3 failures.
+          if (failed >= 3 && results.length === 0) {
+            setUploadProgress(`Upload failed: ${firstError}`);
+            setTimeout(() => setUploadProgress(""), 10000);
+            setUploading(false);
+            if (fileRef.current) fileRef.current.value = "";
+            return;
+          }
         }
       } catch (err) {
         console.error("Upload error for", files[i].name, err);
@@ -164,9 +201,16 @@ export default function ManageGalleryPage() {
       }
     }
 
-    // Step 2: Batch-register ALL uploaded photos in one metadata write
-    if (results.length > 0) {
-      setUploadProgress("Saving to gallery...");
+    // Step 2: Register uploaded photos in CHUNKS. One huge register-batch call
+    // could time out or exceed body limits for large uploads (100+ photos),
+    // leaving orphan blobs. Chunking keeps each metadata write small and
+    // gives partial progress if a later chunk fails.
+    let registered = 0;
+    let registerFailedCount = 0;
+    const CHUNK = 25;
+    for (let i = 0; i < results.length; i += CHUNK) {
+      const chunk = results.slice(i, i + CHUNK);
+      setUploadProgress(`Saving to gallery (${Math.min(i + CHUNK, results.length)} of ${results.length})...`);
       try {
         const regRes = await fetch(`/api/admin/galleries/${galleryId}/photos`, {
           method: "POST",
@@ -176,35 +220,44 @@ export default function ManageGalleryPage() {
           },
           body: JSON.stringify({
             action: "register-batch",
-            photos: results,
+            photos: chunk,
           }),
         });
 
-        // Update gallery state directly from response (avoids stale cache reads)
         if (regRes.ok) {
           const regData = await regRes.json();
+          const newPhotos = (regData.photos || []).map((p: { id: string; url: string; filename: string }) => ({
+            id: p.id,
+            url: p.url,
+            filename: p.filename,
+          }));
+          registered += newPhotos.length;
           setGallery((prev) => {
             if (!prev) return prev;
-            const newPhotos = (regData.photos || []).map((p: { id: string; url: string; filename: string }) => ({
-              id: p.id,
-              url: p.url,
-              filename: p.filename,
-            }));
             return {
               ...prev,
               photos: [...prev.photos, ...newPhotos],
               coverPhotoId: prev.coverPhotoId || newPhotos[0]?.id || null,
             };
           });
+        } else {
+          registerFailedCount += chunk.length;
+          const errText = await regRes.text();
+          console.error("Register batch failed", regRes.status, errText);
         }
       } catch (err) {
-        console.error("Batch register failed", err);
+        registerFailedCount += chunk.length;
+        console.error("Register batch failed", err);
       }
     }
 
-    if (failed > 0) {
-      setUploadProgress(`Done! ${results.length} uploaded, ${failed} failed.`);
-      setTimeout(() => setUploadProgress(""), 3000);
+    if (failed > 0 || registerFailedCount > 0 || skipped > 0) {
+      const parts = [`${registered} saved`];
+      if (skipped > 0) parts.push(`${skipped} already in gallery`);
+      if (failed > 0) parts.push(`${failed} upload failed`);
+      if (registerFailedCount > 0) parts.push(`${registerFailedCount} not registered — try Recover Stranded Uploads`);
+      setUploadProgress(`Done. ${parts.join(", ")}.`);
+      setTimeout(() => setUploadProgress(""), 6000);
     } else {
       setUploadProgress("");
     }
@@ -213,23 +266,83 @@ export default function ManageGalleryPage() {
     if (fileRef.current) fileRef.current.value = "";
   }
 
-  async function handleDeletePhoto(photoId: string) {
+  async function handleReconcile() {
     const pin = getPin();
-    await fetch(`/api/admin/galleries/${galleryId}/photos?photoId=${photoId}`, {
-      method: "DELETE",
-      headers: { "x-admin-pin": pin },
+    setUploadProgress("Scanning blob storage for stranded uploads...");
+    setUploading(true);
+    try {
+      const res = await fetch(`/api/admin/galleries/${galleryId}/photos`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-pin": pin },
+        body: JSON.stringify({ action: "reconcile" }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setUploadProgress(`Recovered ${data.recovered} photo${data.recovered === 1 ? "" : "s"}. Refreshing...`);
+        await fetchGallery({ allowRedirect: false });
+        setTimeout(() => setUploadProgress(""), 3000);
+      } else {
+        const errText = await res.text();
+        console.error("Reconcile failed", res.status, errText);
+        setUploadProgress(`Recover failed (${res.status}). Check console.`);
+        setTimeout(() => setUploadProgress(""), 5000);
+      }
+    } catch (err) {
+      console.error("Reconcile error", err);
+      setUploadProgress("Recover failed. Check console.");
+      setTimeout(() => setUploadProgress(""), 5000);
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  async function handleDeletePhoto(photoId: string) {
+    // Optimistic UI: remove from local state immediately so the click feels instant.
+    let snapshot: Gallery | null = null;
+    setGallery((prev) => {
+      if (!prev) return prev;
+      snapshot = prev;
+      return {
+        ...prev,
+        photos: prev.photos.filter((p) => p.id !== photoId),
+        coverPhotoId: prev.coverPhotoId === photoId
+          ? (prev.photos.find((p) => p.id !== photoId)?.id ?? null)
+          : prev.coverPhotoId,
+      };
     });
-    fetchGallery();
+
+    // Chain onto the serial queue so deletes never overlap on the server.
+    const job = deleteQueueRef.current.then(async () => {
+      const pin = getPin();
+      try {
+        const res = await fetch(
+          `/api/admin/galleries/${galleryId}/photos?photoId=${photoId}`,
+          { method: "DELETE", headers: { "x-admin-pin": pin } }
+        );
+        if (!res.ok && res.status !== 404) {
+          // 404 = already gone, treat as success. Anything else: revert.
+          if (snapshot) setGallery(snapshot);
+          await fetchGallery({ allowRedirect: false });
+        }
+      } catch {
+        if (snapshot) setGallery(snapshot);
+        await fetchGallery({ allowRedirect: false });
+      }
+    });
+    deleteQueueRef.current = job.catch(() => {});
+    await job;
   }
 
   async function handleSetCover(photoId: string) {
     const pin = getPin();
+    // Optimistic update
+    setGallery((prev) => prev ? { ...prev, coverPhotoId: photoId } : prev);
     await fetch(`/api/admin/galleries/${galleryId}/photos`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json", "x-admin-pin": pin },
       body: JSON.stringify({ coverPhotoId: photoId }),
     });
-    fetchGallery();
+    fetchGallery({ allowRedirect: false });
   }
 
   async function handleCoverPosition(pos: "top" | "center" | "bottom") {
@@ -392,6 +505,13 @@ export default function ManageGalleryPage() {
                 />
               </label>
               <p className="text-xs text-charcoal-light mt-2">JPG, PNG, WEBP, HEIC &middot; Up to 20MB per photo</p>
+              <button
+                type="button"
+                onClick={handleReconcile}
+                className="mt-4 text-xs uppercase tracking-wider text-charcoal-light hover:text-sage transition-colors underline underline-offset-2"
+              >
+                Recover Stranded Uploads
+              </button>
             </>
           )}
         </div>
@@ -403,7 +523,9 @@ export default function ManageGalleryPage() {
           </div>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            {gallery.photos.map((photo) => (
+            {[...gallery.photos]
+              .sort((a, b) => a.filename.localeCompare(b.filename, undefined, { numeric: true }))
+              .map((photo) => (
               <div key={photo.id} className="group relative aspect-square">
                 <img
                   src={photo.url}
