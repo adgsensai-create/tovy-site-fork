@@ -15,14 +15,15 @@ The run parameters are appended at the bottom of this prompt: `SLUG`, `TYPE`, `P
 ## Step 1: Load the item
 
 1. Read `content/queue.json`. Find the first item whose `status` is `"queued"`. Its `slug` must equal `SLUG`. If it does not, block with reason `queue mismatch`.
-2. Read `CLAUDE.md` in full. Its Brand Rules are binding.
+2. Read `CLAUDE.md` in full. Its Brand Rules are binding. Then read the Ground rules section of `content/seo-plan.md`, which is binding too.
+   If the queue item has a `notes` field, follow it. A note that says "Block unless" is a condition you must check before writing anything.
 3. If `SOURCE_DRAFT` is not `null`, read that file. It is Gabi's draft. Keep her wording and ideas wherever they already meet the rules below. Your job is to shape it, not replace her voice.
 4. Check the slug is new. Block with reason `slug exists` if it already appears in `src/lib/blog-posts-seo.ts`, `src/lib/blog-data.ts`, `src/lib/services.ts`, or `src/lib/locations.ts`.
 
 ## Step 2: Gather facts before writing
 
 - **Prices** come only from `src/lib/site.ts` (`site.pricing`) and the Pricing section of `CLAUDE.md`. Mini $200, Classic $325, Full $500, Tailored custom. Do not quote any other Tovy price.
-- **Places Gabi has really shot** come only from `src/lib/gallery-data.ts`. Read it and list the real sessions and their locations. You may say "I photographed" or "a session I shot at" only for those. For any other town or venue, describe the place factually and speak in the future tense ("we can meet at"), never claim past experience.
+- **Places and session types Gabi has really shot** come only from `src/lib/gallery-data.ts`. Read it and list the real sessions, their types, and their locations. Do not present a session type (twins, proposals, seniors, and so on) as something she has done unless a gallery shows it. You may say "I photographed" or "a session I shot at" only for those. For any other town or venue, describe the place factually and speak in the future tense ("we can meet at"), never claim past experience.
 - **Proof links** must point to real gallery pages: `/gallery/<category>/<slug>` built from `gallery-data.ts`.
 - **Images** must already exist under `public/photos/`. Open each one you pick with Read and confirm it fits the topic. A maternity page needs a pregnancy photo, a newborn page needs a newborn. If nothing fits, use the closest honest option and say so in the summary `notes`.
 - **Cost pages** (`TYPE` = `cost`) need outside ranges. Use WebSearch to find two published cost guides for this topic and area, from different organizations, dated 2025 or 2026. Open each with WebFetch and confirm the exact range appears on the page. Attribute every outside number in the text to its source by name with a link, for example `<a href="...">Thumbtack's 2026 cost guide</a> lists ...`. If you cannot verify two sources, block with reason `could not verify two cost sources`.
@@ -54,6 +55,7 @@ The sitemap reads all three files, so do not edit `src/app/sitemap.ts`.
 
 - From the new page, link to 2 to 4 relevant existing pages: the matching service page, a real gallery, `/sessions`, `/contact`, or a related post.
 - Add a link **to** the new page from at least two existing pages, where a reader would actually want it. Good places: a related service's `related` array, a related blog post's `content`, a location's `nearby` list (location pages only), or a relevant FAQ answer. Keep every edit small and in the existing voice.
+- For a `service` page, also add it to the hand-written list of session links on `src/app/sessions/page.tsx` (the list that already holds Maternity, Milestone, Mini Sessions and Bar and Bat Mitzvahs). The footer picks up services automatically. Do not add service pages to the main nav in `Header.tsx`.
 - Every internal `href` you add must resolve to a page that exists or that you just created.
 
 ## Step 5: Build

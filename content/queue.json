@@ -1,5 +1,296 @@
 {
   "version": 1,
   "source": "content/seo-plan.md",
-  "items": []
+  "items": [
+    {
+      "slug": "fall-family-photos-guide",
+      "type": "guide",
+      "primaryKeyword": "fall family photoshoot",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 22
+    },
+    {
+      "slug": "christmas-holiday-family-photos",
+      "type": "guide",
+      "primaryKeyword": "christmas family photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 23
+    },
+    {
+      "slug": "hanukkah-family-photoshoot",
+      "type": "guide",
+      "primaryKeyword": "hanukkah photoshoot",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 31
+    },
+    {
+      "slug": "proposal-photography",
+      "type": "service",
+      "primaryKeyword": "chicago proposal photographer",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 5,
+      "notes": "Only claim proposals if gallery-data.ts has one; otherwise frame it as planning a proposal shoot and link the real engagement sessions."
+    },
+    {
+      "slug": "in-home-newborn-photography",
+      "type": "service",
+      "primaryKeyword": "in-home newborn photography near me",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 9,
+      "notes": "The live post newborn-photos-at-home-vs-studio owns 'newborn photography at home'. Link to it and do not compete for that phrase."
+    },
+    {
+      "slug": "maternity-and-newborn-photography",
+      "type": "service",
+      "primaryKeyword": "maternity and newborn photography",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 10,
+      "notes": "There is no bundle price in site.pricing. Describe booking both sessions without inventing a package price."
+    },
+    {
+      "slug": "lifestyle-newborn-photography",
+      "type": "service",
+      "primaryKeyword": "lifestyle newborn photography",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 11
+    },
+    {
+      "slug": "lifestyle-family-photography",
+      "type": "service",
+      "primaryKeyword": "lifestyle family photography",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 12
+    },
+    {
+      "slug": "extended-family-photography",
+      "type": "service",
+      "primaryKeyword": "large family photoshoot",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 13,
+      "notes": "Also cover 'extended family photos' and 'multigenerational family photos'."
+    },
+    {
+      "slug": "engagement-photoshoot-cost-chicago",
+      "type": "cost",
+      "primaryKeyword": "engagement photoshoot cost",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 18
+    },
+    {
+      "slug": "maternity-photoshoot-cost-chicago",
+      "type": "cost",
+      "primaryKeyword": "maternity photoshoot cost",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 19
+    },
+    {
+      "slug": "bar-mitzvah-photographer-cost",
+      "type": "cost",
+      "primaryKeyword": "how much does a bar mitzvah photographer cost",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 20
+    },
+    {
+      "slug": "family-photos-with-dog",
+      "type": "guide",
+      "primaryKeyword": "family photos with dog",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 26
+    },
+    {
+      "slug": "newborn-photos-with-siblings",
+      "type": "guide",
+      "primaryKeyword": "newborn photos with siblings",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 27
+    },
+    {
+      "slug": "what-to-wear-for-maternity-photos",
+      "type": "guide",
+      "primaryKeyword": "what to wear for maternity photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 28,
+      "notes": "The live post maternity-photos-when-to-book-what-to-wear overlaps. Go deeper on outfits and link to it."
+    },
+    {
+      "slug": "what-to-wear-for-newborn-photos",
+      "type": "guide",
+      "primaryKeyword": "what to wear for newborn photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 29
+    },
+    {
+      "slug": "birth-announcement-photos",
+      "type": "guide",
+      "primaryKeyword": "birth announcement photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 34
+    },
+    {
+      "slug": "how-to-prepare-for-family-photos",
+      "type": "guide",
+      "primaryKeyword": "how to prepare for family photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 35,
+      "notes": "Also answer 'how long does a family photo session take' from site.pricing durations. The plan says a draft exists, but it is not on this Mac."
+    },
+    {
+      "slug": "gillson-park-family-photos",
+      "type": "guide",
+      "primaryKeyword": "gillson park photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 38,
+      "notes": "Include a permit note. Only claim a session there if gallery-data.ts has one."
+    },
+    {
+      "slug": "chicago-botanic-garden-photos-permits",
+      "type": "guide",
+      "primaryKeyword": "chicago botanic garden engagement photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 39,
+      "notes": "Include the garden's photography permit rules from its official site."
+    },
+    {
+      "slug": "chicago-riverwalk-engagement-photos",
+      "type": "guide",
+      "primaryKeyword": "chicago riverwalk photoshoot",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 41
+    },
+    {
+      "slug": "lincoln-park-conservatory-engagement-photos",
+      "type": "guide",
+      "primaryKeyword": "lincoln park conservatory engagement photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 42
+    },
+    {
+      "slug": "best-maternity-photo-locations-north-shore",
+      "type": "guide",
+      "primaryKeyword": "maternity photo locations north shore",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 43,
+      "notes": "The plan says a draft exists, but it is not on this Mac."
+    },
+    {
+      "slug": "mothers-day-mini-sessions",
+      "type": "guide",
+      "primaryKeyword": "mothers day mini sessions",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 32
+    },
+    {
+      "slug": "spring-mini-sessions",
+      "type": "guide",
+      "primaryKeyword": "spring mini sessions",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 33
+    },
+    {
+      "slug": "deerfield",
+      "type": "location",
+      "primaryKeyword": "deerfield family photographer",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 47,
+      "notes": "Plan gate: publish once the first 12 town pages show impressions in Search Console."
+    },
+    {
+      "slug": "glencoe",
+      "type": "location",
+      "primaryKeyword": "glencoe family photographer",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 47,
+      "notes": "Plan gate: publish once the first 12 town pages show impressions in Search Console."
+    },
+    {
+      "slug": "kenilworth",
+      "type": "location",
+      "primaryKeyword": "kenilworth family photographer",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 47,
+      "notes": "Plan gate: publish once the first 12 town pages show impressions in Search Console."
+    },
+    {
+      "slug": "lake-forest",
+      "type": "location",
+      "primaryKeyword": "lake forest family photographer",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 48,
+      "notes": "Lowest priority in the plan."
+    },
+    {
+      "slug": "buffalo-grove",
+      "type": "location",
+      "primaryKeyword": "buffalo grove family photographer",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 48,
+      "notes": "Lowest priority in the plan."
+    },
+    {
+      "slug": "arlington-heights",
+      "type": "location",
+      "primaryKeyword": "arlington heights family photographer",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 48,
+      "notes": "Lowest priority in the plan."
+    },
+    {
+      "slug": "twins-newborn-photography",
+      "type": "service",
+      "primaryKeyword": "twins newborn photography",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 14,
+      "notes": "Block unless gallery-data.ts shows a twins session."
+    },
+    {
+      "slug": "fresh-48-newborn-photography",
+      "type": "service",
+      "primaryKeyword": "fresh 48 newborn photos",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 15,
+      "notes": "Block unless gallery-data.ts shows a hospital or first-48-hours session."
+    },
+    {
+      "slug": "senior-portraits-evanston",
+      "type": "service",
+      "primaryKeyword": "senior pictures chicago",
+      "sourceDraft": null,
+      "status": "queued",
+      "plan": 50,
+      "notes": "Block unless gallery-data.ts shows a senior or graduation session."
+    }
+  ]
 }
