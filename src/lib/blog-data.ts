@@ -227,7 +227,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>6. Harms Woods — Skokie / Glenview Border</h2>
 
-<p>For families who want a deep, wooded, natural feel, Harms Woods is worth considering. The tall trees and wide trails create beautiful layered depth in photos. Fall is especially stunning here when the leaves are changing and the forest floor is covered in golden tones. It's a forest preserve so it stays fairly uncrowded.</p>
+<p>For families who want a deep, wooded, natural feel, Harms Woods is worth considering. The tall trees and wide trails create beautiful layered depth in photos. Fall is especially stunning here when the leaves are changing and the forest floor is covered in golden tones. It's a forest preserve so it stays fairly uncrowded. For more on timing and what to wear this time of year, see my guide to <a href="/blog/fall-family-photos-guide">planning a fall family photoshoot</a>.</p>
 
 <p><strong>Best time to shoot:</strong> Afternoon light works well since the tree cover softens even midday sun. Fall is peak season.</p>
 

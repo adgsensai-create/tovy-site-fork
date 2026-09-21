@@ -196,4 +196,92 @@ export const seoBlogPosts: BlogPost[] = [
 <p>Ready to plan? Here is <a href="/sessions/newborn-photography">how my in-home newborn sessions work</a>, or <a href="/contact">reach out</a> with your due date.</p>
 `,
   },
+  {
+    slug: "fall-family-photos-guide",
+    title: "Planning a Fall Family Photoshoot: Timing, Locations, and What to Wear",
+    excerpt:
+      "A fall family photoshoot means warm light, changing leaves, and the busiest season of the year to book. Here is when to schedule, where to shoot, and what to wear on the North Shore.",
+    date: "2026-09-21",
+    category: "Family",
+    image: "/photos/golden-hour-family-lakeside.jpg",
+    seoTitle: "Fall Family Photoshoot Guide | Tovy Photography, Skokie & North Shore",
+    seoDescription:
+      "Planning a fall family photoshoot? A Skokie photographer covers when to book, the best North Shore locations, timing for golden light, and what to wear.",
+    faqs: [
+      {
+        question: "When should I book a fall family photoshoot?",
+        answer:
+          "As early as you can, ideally by August or early September. Fall is my most popular season for family photos, and weekend evening dates fill first, so booking early gets you the date and time you actually want.",
+      },
+      {
+        question: "Where are the best fall family photo locations near Skokie?",
+        answer:
+          "Spots with mature trees hold their color the longest. Harms Woods on the Skokie and Glenview border, Keay Nature Center in Wilmette, and Emily Oaks Nature Center in Skokie are all favorites once the leaves start turning.",
+      },
+      {
+        question: "What is the best time of day for a fall family photoshoot?",
+        answer:
+          "Golden hour, the hour or so before sunset, still gives the softest and warmest light in fall. That window arrives earlier than summer, often starting around 4:30 or 5:00 in the evening instead of 7:00.",
+      },
+      {
+        question: "What should we wear for a fall family photoshoot?",
+        answer:
+          "Warm, soft tones work best: cream, rust, olive, navy, mustard. Coordinate colors instead of matching exactly, layer in a light sweater if the morning is cool, and skip logos, neon, and all-white pieces.",
+      },
+      {
+        question: "How much does a fall family photoshoot cost?",
+        answer:
+          "My family sessions run from $200 for a 30-minute mini session with 10 edited images to $500 for a 90-minute full session with 30 images. The Classic session, $325 for 60 minutes and 20 images, is what most families choose for fall.",
+      },
+    ],
+    content: `
+<p>A fall family photoshoot works best when it's booked early and scheduled for the last hour or so before sunset, when the light turns warm and the North Shore trees start to change. Fall is my busiest season, and the families who reach out in August or early September get first pick of weekend dates and that golden evening light.</p>
+
+<p>If you've been thinking about a fall session for your family, here is what actually goes into planning one: when to book, where to shoot, how to time it, and what to wear.</p>
+
+<h2>Why fall is the most popular season for family photos</h2>
+
+<p>Cooler weather means a more comfortable session without summer humidity or the harsh midday sun of June and July. Kids are usually settling back into a school routine, which tends to mean better naps and steadier moods. And there is the visual part: warm color in the trees pairs beautifully with the soft, warm neutral tones that photograph well in every family portrait.</p>
+
+<h3>When should I book a fall family photoshoot?</h3>
+
+<p>As early as you can, ideally by late summer. Fall is the season most families want, both for the color in the trees and for getting fresh photos in time for holiday cards, so weekend evening slots go first. I recommend reaching out in August or early September so we can find a date and time before the calendar fills.</p>
+
+<p>If a mini session is what you're after, that goes even faster. Mini sessions are 30 minutes with 10 edited images, and I only have a handful of fall mini dates each year.</p>
+
+<h2>Best fall family photo locations near Skokie and the North Shore</h2>
+
+<h3>Where are the best fall family photo locations near Skokie?</h3>
+
+<p>Look for spots with mature trees, since they tend to hold their color the longest. Harms Woods, right on the Skokie and Glenview border, is one I recommend often once the leaves start turning. The tall trees and wide trails give that layered, golden forest look. Keay Nature Center in Wilmette and Emily Oaks Nature Center in Skokie are two more favorites, both with canopy trails that filter the light beautifully in October. I wrote more about these and a few other spots in my guide to <a href="/blog/best-family-photo-locations-skokie-north-shore">family photo locations in Skokie and the North Shore</a>.</p>
+
+<p>You can see what a wooded North Shore session looks like in this <a href="/gallery/family/keay-nature-center-wilmette-family-session">family session at Keay Nature Center in Wilmette</a>.</p>
+
+<p>If the weather doesn't cooperate, an in-home session is always a warm, easy backup. No jackets to coordinate, no waiting out rain, just your family being yourselves in the space you already know.</p>
+
+<h2>Timing your fall session for the best light</h2>
+
+<h3>What is the best time of day for a fall family photoshoot?</h3>
+
+<p>Golden hour, the hour or so before sunset, still gives you the softest and warmest light in fall. The difference from summer is timing: as the days get shorter, that golden window arrives earlier, often starting around 4:30 or 5:00 in the evening instead of 7:00. That earlier start is actually a gift for families with younger kids, since it means less waiting around past dinner and bedtime.</p>
+
+<p>I'll always look up the sunset time for your actual session date and suggest a start time from there, rather than guessing at a generic hour.</p>
+
+<h2>What to wear for a fall family photoshoot</h2>
+
+<h3>What should we wear for a fall family photoshoot?</h3>
+
+<p>Lean into warm, soft tones: cream, rust, olive, navy, mustard. Layer in a light sweater or flannel if the morning is cool. Coordinate your family's colors rather than matching everyone exactly, mix in a few textures, and skip logos, neon, and all-white pieces, which tend to wash people out against fall backgrounds. For Classic and Full sessions I help with wardrobe guidance ahead of time, so nobody is guessing the morning of.</p>
+
+<h2>What a fall family photoshoot costs</h2>
+
+<h3>How much does a fall family photoshoot cost?</h3>
+
+<p>My family sessions run from $200 for a 30-minute mini session with 10 edited images, up to $500 for a 90-minute full session with 30 images. The Classic session, $325 for 60 minutes and 20 images, is what most families choose for a fall shoot since it gives enough time for both posed and candid moments without rushing anyone. You can see the full breakdown on the <a href="/sessions/family-photography">family photography page</a>.</p>
+
+<h2>Let's plan your fall session</h2>
+
+<p>Fall in Skokie and the North Shore goes by fast, and the best dates go even faster. If you've been picturing your family under changing leaves in that warm evening light, <a href="/contact">reach out</a> and let's find a date before the season books up.</p>
+`,
+  },
 ];
