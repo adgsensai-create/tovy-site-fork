@@ -11,7 +11,7 @@
       "plan": 5,
       "notes": "Only claim proposals if gallery-data.ts has one; otherwise frame it as planning a proposal shoot and link the real engagement sessions. Shipped in the batch PR from Omer's fork (seo-batch-1).",
       "branch": "seo-batch-1",
-      "pr": null,
+      "pr": 5,
       "updatedAt": "2026-09-22"
     },
     {
@@ -23,7 +23,7 @@
       "plan": 10,
       "notes": "There is no bundle price in site.pricing. Describe booking both sessions without inventing a package price. Shipped in the batch PR from Omer's fork (seo-batch-1).",
       "branch": "seo-batch-1",
-      "pr": null,
+      "pr": 5,
       "updatedAt": "2026-09-22"
     },
     {
@@ -35,7 +35,7 @@
       "plan": 13,
       "notes": "Also cover 'extended family photos' and 'multigenerational family photos'. Shipped in the batch PR from Omer's fork (seo-batch-1).",
       "branch": "seo-batch-1",
-      "pr": null,
+      "pr": 5,
       "updatedAt": "2026-09-22"
     },
     {
@@ -46,7 +46,7 @@
       "status": "in_review",
       "plan": 18,
       "branch": "seo-batch-1",
-      "pr": null,
+      "pr": 5,
       "updatedAt": "2026-09-22",
       "notes": " Shipped in the batch PR from Omer's fork (seo-batch-1)."
     },
@@ -58,7 +58,7 @@
       "status": "in_review",
       "plan": 19,
       "branch": "seo-batch-1",
-      "pr": null,
+      "pr": 5,
       "updatedAt": "2026-09-22",
       "notes": " Shipped in the batch PR from Omer's fork (seo-batch-1)."
     },
