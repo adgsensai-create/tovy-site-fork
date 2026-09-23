@@ -916,7 +916,7 @@ export const services: Record<string, ServicePage> = {
   "proposal-photography": {
     slug: "proposal-photography",
     shortName: "Proposal Photography",
-    title: "Chicago Proposal Photographer, Skokie and North Shore",
+    title: "Chicago Proposal Photographer, North Shore",
     description:
       "Surprise proposal photographer in Chicago and the North Shore. Hidden and ready at the spot you choose, then a short portrait session after the yes. From $200.",
     eyebrow: "Chicago and the North Shore",
@@ -1048,9 +1048,9 @@ export const services: Record<string, ServicePage> = {
   "extended-family-photography": {
     slug: "extended-family-photography",
     shortName: "Extended Family Sessions",
-    title: "Extended Family Photographer, Skokie and North Shore",
+    title: "Extended Family Photographer, North Shore",
     description:
-      "Extended family and large family photoshoots in Skokie and Chicago's North Shore. Grandparents, cousins, multigenerational groups, at a park or at home. $500 Full session.",
+      "Extended family and large family photoshoots in Skokie and Chicago's North Shore. Grandparents, cousins and multigenerational groups, at a park or at home.",
     eyebrow: "Skokie and Chicago North Shore",
     h1: "Extended Family Photography",
     tagline: "Everyone in one frame, and then the small groups that matter just as much.",
@@ -1175,9 +1175,9 @@ export const services: Record<string, ServicePage> = {
   "maternity-and-newborn-photography": {
     slug: "maternity-and-newborn-photography",
     shortName: "Maternity + Newborn",
-    title: "Maternity and Newborn Photography, Skokie North Shore",
+    title: "Maternity and Newborn Photography, Skokie",
     description:
-      "Book maternity and newborn photography together in Skokie and Chicago's North Shore. Same photographer, same natural light, one story from bump to baby. From $200 each.",
+      "Book maternity and newborn photography together in Skokie and Chicago's North Shore. One photographer, natural light, one story from bump to baby. From $200.",
     eyebrow: "Skokie and Chicago North Shore",
     h1: "Maternity and Newborn Photography",
     tagline: "The waiting and the arrival, photographed as one story.",

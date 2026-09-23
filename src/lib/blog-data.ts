@@ -23,8 +23,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-04-13",
     category: "Locations",
     image: "/photos/garfield-park-conservatory-engagement/cover-bench.jpg",
-    seoTitle: "Garfield Park Conservatory Engagement Photos in Chicago | Tovy Photography",
-    seoDescription: "Planning Garfield Park Conservatory engagement photos in Chicago? See why this lush indoor location works so beautifully, what to wear, and what makes a conservatory session feel so special.",
+    seoTitle: "Garfield Park Conservatory Engagement Photos | Tovy Photography",
+    seoDescription: "Garfield Park Conservatory engagement photos: why the lush indoor setting works so well, what to wear, and how a conservatory session feels.",
     content: `
 <p>If you're looking for a Chicago engagement photo location that feels green, romantic, and a little removed from the city outside, Garfield Park Conservatory is such a beautiful choice. This session had all the things I love most: soft light, quiet in-between moments, layered greenery, and just enough variety to make the gallery feel full without needing to run all over the city.</p>
 

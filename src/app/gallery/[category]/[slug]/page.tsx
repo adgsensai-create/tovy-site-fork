@@ -29,7 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shoot = getShootBySlug(category, slug);
   if (!shoot) return {};
 
-  const title = { absolute: `${shoot.title} | Tovy Photography` };
+  const title = {
+    absolute: shoot.title.length > 45 ? shoot.title : `${shoot.title} | Tovy Photography`,
+  };
   const description =
     shoot.description.length > 155
       ? shoot.description.slice(0, shoot.description.lastIndexOf(" ", 152)) + "."

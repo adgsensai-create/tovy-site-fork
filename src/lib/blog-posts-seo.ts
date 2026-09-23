@@ -352,7 +352,7 @@ export const seoBlogPosts: BlogPost[] = [
     date: "2026-09-21",
     category: "Family",
     image: "/photos/golden-hour-family-lakeside.jpg",
-    seoTitle: "Fall Family Photoshoot Guide | Tovy Photography, Skokie & North Shore",
+    seoTitle: "Fall Family Photoshoot Guide, North Shore | Tovy Photography",
     seoDescription:
       "Planning a fall family photoshoot? A Skokie photographer covers when to book, the best North Shore locations, timing for golden light, and what to wear.",
     faqs: [
