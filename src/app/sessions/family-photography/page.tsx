@@ -3,9 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import StickyBookingBar from "@/components/StickyBookingBar";
+import { services } from "@/lib/services";
+import { locationPages } from "@/lib/locations";
+import { site, breadcrumbJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Family Photography in Skokie & Chicago's North Shore | Tovy Photography",
+  title: "Family Photographer in Skokie and the North Shore",
   description:
     "Natural, relaxed family photography in Skokie, Evanston, and Chicago's North Shore. Outdoor and in-home sessions that capture real connection. Sessions from $200.",
   alternates: {
@@ -87,8 +90,20 @@ export default function FamilyPhotographyPage() {
     })),
   };
 
+  const why = services["family-photography"].why;
+  const towns = Object.values(locationPages);
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: "Home", url: site.url },
+    { name: "Sessions and Pricing", url: `${site.url}/sessions` },
+    { name: "Family Photographer", url: `${site.url}/sessions/family-photography` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
@@ -132,6 +147,14 @@ export default function FamilyPhotographyPage() {
               Book Your Family Session
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Citable summary */}
+      <section className="px-6 pt-16 lg:px-8">
+        <div className="mx-auto max-w-3xl space-y-4 text-lg md:text-xl leading-relaxed text-charcoal">
+          <p>Tovy Photography is a family photographer based in Skokie, IL, photographing families outdoors at North Shore parks and beaches, in their own homes, and in their backyards across Evanston, Wilmette, Lincolnwood, Glenview and Chicago. Sessions are natural light and gently guided, and start at $200 with edited images and full print rights included.</p>
+          <p>I photograph lifestyle family sessions, which means no stiff line-ups and no forced smiles. You walk, play and talk to each other, and I photograph what that looks like on a good day.</p>
         </div>
       </section>
 
@@ -299,6 +322,24 @@ export default function FamilyPhotographyPage() {
       </section>
 
       {/* Section 5: FAQ */}
+      {/* What makes it work */}
+      <section className="bg-white px-6 py-20 md:py-28 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl mb-8 text-charcoal">
+            What makes family photos work
+          </h2>
+          <ul className="space-y-6">
+            {why.items.map((item, i) => (
+              <li key={i} className="border-l-2 border-sage pl-5">
+                <p className="text-charcoal leading-relaxed">
+                  <strong className="font-semibold">{item.title}</strong> {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="px-6 py-20 md:py-28 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <ScrollReveal animation="fade-up">
@@ -376,6 +417,26 @@ export default function FamilyPhotographyPage() {
 
       {/* Spacer so the sticky bar never covers the footer content */}
       <div className="h-14" />
+
+      {/* Service areas */}
+      <section className="px-6 pb-16 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl mb-4 text-charcoal">
+            Where I photograph
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {towns.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/locations/${t.slug}`}
+                className="border border-charcoal/15 px-4 py-2 text-sm text-charcoal hover:border-sage hover:text-sage-dark transition-colors"
+              >
+                {t.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <StickyBookingBar />
     </>

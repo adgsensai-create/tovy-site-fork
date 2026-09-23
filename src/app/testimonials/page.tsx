@@ -3,9 +3,9 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Reviews & Testimonials — Skokie Family & Newborn Photographer | Tovy Photography",
+  title: "Reviews from Skokie and North Shore Families",
   description:
-    "Read what families are saying about their experience with Tovy Photography. Real reviews from newborn, family, and event photography sessions in Skokie, Evanston, and Chicago's North Shore.",
+    "Real reviews from newborn, family and event sessions with Tovy Photography in Skokie, Evanston and Chicago\'s North Shore.",
   alternates: {
     canonical: "https://tovyphotography.com/testimonials",
   },

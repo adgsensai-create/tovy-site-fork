@@ -3,9 +3,12 @@ import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import ScrollReveal from "@/components/ScrollReveal";
 import StickyBookingBar from "@/components/StickyBookingBar";
+import { services } from "@/lib/services";
+import { locationPages } from "@/lib/locations";
+import { site, breadcrumbJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Engagement Photography on Chicago's North Shore | Tovy Photography",
+  title: "Engagement Photographer, Chicago and the North Shore",
   description:
     "Natural, joyful engagement photography in Evanston, Wilmette, Skokie, and across Chicago's North Shore. Celebrate your love story with photos that feel like you.",
   alternates: {
@@ -91,8 +94,20 @@ export default function EngagementPhotographyPage() {
     })),
   };
 
+  const why = services["engagement-photography"].why;
+  const towns = Object.values(locationPages);
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: "Home", url: site.url },
+    { name: "Sessions and Pricing", url: `${site.url}/sessions` },
+    { name: "Engagement Photographer", url: `${site.url}/sessions/engagement-photography` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
@@ -131,6 +146,14 @@ export default function EngagementPhotographyPage() {
               Book Your Engagement Session
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Citable summary */}
+      <section className="px-6 pt-16 lg:px-8">
+        <div className="mx-auto max-w-3xl space-y-4 text-lg md:text-xl leading-relaxed text-charcoal">
+          <p>Tovy Photography photographs engagement sessions in Chicago and on the North Shore, at the Garfield Park Conservatory, on the lakefront in Evanston and Wilmette, at the Skokie Lagoons, and in the neighborhoods where your story actually happened. Sessions are natural light and relaxed, and start at $200 with edited images and full print rights included.</p>
+          <p>I am Gabi, based in Skokie. Surprise proposals are welcome too: you tell me the spot and the plan, and I am hidden and ready.</p>
         </div>
       </section>
 
@@ -309,6 +332,24 @@ export default function EngagementPhotographyPage() {
       </section>
 
       {/* Section 5: FAQ */}
+      {/* What makes it work */}
+      <section className="bg-white px-6 py-20 md:py-28 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl mb-8 text-charcoal">
+            What makes engagement photos work
+          </h2>
+          <ul className="space-y-6">
+            {why.items.map((item, i) => (
+              <li key={i} className="border-l-2 border-sage pl-5">
+                <p className="text-charcoal leading-relaxed">
+                  <strong className="font-semibold">{item.title}</strong> {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="px-6 py-20 md:py-28 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <ScrollReveal animation="fade-up">
@@ -386,6 +427,26 @@ export default function EngagementPhotographyPage() {
 
       {/* Spacer so the sticky bar never covers the footer content */}
       <div className="h-14" />
+
+      {/* Service areas */}
+      <section className="px-6 pb-16 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl mb-4 text-charcoal">
+            Where I photograph
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {towns.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/locations/${t.slug}`}
+                className="border border-charcoal/15 px-4 py-2 text-sm text-charcoal hover:border-sage hover:text-sage-dark transition-colors"
+              >
+                {t.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <StickyBookingBar />
     </>

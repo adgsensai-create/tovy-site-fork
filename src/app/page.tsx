@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { localBusinessJsonLd } from "@/lib/site";
+import { localBusinessJsonLd, faqJsonLd } from "@/lib/site";
+import { services } from "@/lib/services";
 import Link from "next/link";
 import Image from "next/image";
 import HeroSlideshow from "@/components/HeroSlideshow";
@@ -70,6 +71,30 @@ const testimonials = [
 ];
 
 export default function HomePage() {
+  const homeFaqs = [
+    {
+      question: "Where is Tovy Photography based and where do you photograph?",
+      answer:
+        "I am based in Skokie, IL and photograph throughout Chicago's North Shore: Evanston, Wilmette, Lincolnwood, Morton Grove, Glenview, Niles, Northbrook, Park Ridge, Winnetka, Highland Park, West Rogers Park and the city. Sessions within 10 miles of Skokie carry no travel fee.",
+    },
+    {
+      question: "How much does a photography session cost?",
+      answer:
+        "Sessions start at $200 for a 30-minute mini session with 10 edited images. The Classic session is $325 for 60 minutes and 20 images, and the Full session is $500 for 90 minutes and 30 images. Every package includes a private online gallery and full print rights. Events are quoted individually.",
+    },
+    {
+      question: "Do you photograph newborns at home?",
+      answer:
+        "Yes. Newborn sessions happen in your home in natural window light, when your baby is about 5 to 14 days old. You stay comfortable, the baby stays on schedule, and siblings and the whole family are part of the session.",
+    },
+    {
+      question: "How do I book a session?",
+      answer:
+        "Send a note through the contact page with the kind of session you want and a few dates. I reply within 24 to 48 hours with a plan for timing, location and package. For newborns, reach out in your third trimester so we can hold a date.",
+    },
+  ];
+  const homeFaqLd = faqJsonLd(homeFaqs);
+  const serviceList = Object.values(services);
   const jsonLd = localBusinessJsonLd({
     description:
       "Family, newborn, maternity and milestone photographer in Skokie, IL serving Chicago's North Shore. Natural light photography capturing authentic moments.",
@@ -80,6 +105,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqLd) }}
       />
 
       {/* Hero */}
@@ -111,6 +140,15 @@ export default function HomePage() {
               your everyday life, and capture it so you can hold onto this feeling
               long after your kids have grown and these fleeting days become the
               memories you treasure most.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal animation="fade-up" delay={400}>
+            <p className="text-base md:text-lg leading-relaxed text-charcoal mb-10">
+              Tovy Photography is a family, newborn, maternity and milestone
+              photographer based in Skokie, IL, serving Evanston, Wilmette,
+              Lincolnwood and all of Chicago&apos;s North Shore. Sessions are
+              natural light, gently guided, at your home or on location, and
+              start at $200 with edited images and full print rights included.
             </p>
           </ScrollReveal>
           <ScrollReveal animation="fade-up" delay={450}>
@@ -286,6 +324,48 @@ export default function HomePage() {
               View Sessions &amp; Pricing
             </Link>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* All sessions */}
+      <section className="bg-white px-6 py-16 md:py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl mb-8 text-center text-charcoal">
+            Every kind of session
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {serviceList.map((svc) => (
+              <Link
+                key={svc.slug}
+                href={`/sessions/${svc.slug}`}
+                className="block border border-charcoal/10 p-5 transition-colors hover:border-sage"
+              >
+                <h3 className="font-[family-name:var(--font-cormorant)] text-2xl mb-1 text-charcoal">
+                  {svc.shortName}
+                </h3>
+                <p className="text-sm text-charcoal-light leading-relaxed">{svc.tagline}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 py-16 md:py-20 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl mb-10 text-charcoal">
+            Good to know
+          </h2>
+          <div className="space-y-8">
+            {homeFaqs.map((f, i) => (
+              <div key={i}>
+                <h3 className="font-[family-name:var(--font-cormorant)] text-2xl mb-2 text-charcoal">
+                  {f.question}
+                </h3>
+                <p className="text-charcoal-light leading-relaxed">{f.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

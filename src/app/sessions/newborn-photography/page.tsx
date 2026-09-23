@@ -3,9 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import StickyBookingBar from "@/components/StickyBookingBar";
+import { services } from "@/lib/services";
+import { locationPages } from "@/lib/locations";
+import { site, breadcrumbJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Newborn Photography in Skokie & Chicago's North Shore | Tovy Photography",
+  title: "Newborn Photographer in Skokie and the North Shore",
   description:
     "Gentle, in-home newborn photography in Skokie and Chicago's North Shore. Relaxed sessions for babies 5 to 14 days new. Naturally posed, beautifully lit, stress-free.",
   alternates: {
@@ -87,8 +90,20 @@ export default function NewbornPhotographyPage() {
     })),
   };
 
+  const why = services["newborn-photography"].why;
+  const towns = Object.values(locationPages);
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: "Home", url: site.url },
+    { name: "Sessions and Pricing", url: `${site.url}/sessions` },
+    { name: "Newborn Photographer", url: `${site.url}/sessions/newborn-photography` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
@@ -132,6 +147,14 @@ export default function NewbornPhotographyPage() {
               Book Your Newborn Session
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Citable summary */}
+      <section className="px-6 pt-16 lg:px-8">
+        <div className="mx-auto max-w-3xl space-y-4 text-lg md:text-xl leading-relaxed text-charcoal">
+          <p>Tovy Photography offers in-home newborn photography in Skokie, Evanston, Wilmette, Lincolnwood and across Chicago's North Shore. Sessions are lifestyle style in natural window light, photographed at your home when your baby is about 5 to 14 days old, and start at $200 with edited images and full print rights included.</p>
+          <p>I am Gabi, a Skokie-based photographer. I come to you, follow your baby's cues, and photograph siblings and the whole family in the same visit, so the first days at home are the photos you keep.</p>
         </div>
       </section>
 
@@ -289,6 +312,24 @@ export default function NewbornPhotographyPage() {
       </section>
 
       {/* Section 5: FAQ */}
+      {/* What makes it work */}
+      <section className="bg-white px-6 py-20 md:py-28 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl mb-8 text-charcoal">
+            What makes in-home newborn photos work
+          </h2>
+          <ul className="space-y-6">
+            {why.items.map((item, i) => (
+              <li key={i} className="border-l-2 border-sage pl-5">
+                <p className="text-charcoal leading-relaxed">
+                  <strong className="font-semibold">{item.title}</strong> {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="px-6 py-20 md:py-28 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <ScrollReveal animation="fade-up">
@@ -364,6 +405,26 @@ export default function NewbornPhotographyPage() {
 
       {/* Spacer so the sticky bar never covers the footer content */}
       <div className="h-14" />
+
+      {/* Service areas */}
+      <section className="px-6 pb-16 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl mb-4 text-charcoal">
+            Where I photograph
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {towns.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/locations/${t.slug}`}
+                className="border border-charcoal/15 px-4 py-2 text-sm text-charcoal hover:border-sage hover:text-sage-dark transition-colors"
+              >
+                {t.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <StickyBookingBar />
     </>

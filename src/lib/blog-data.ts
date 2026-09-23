@@ -68,8 +68,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-23",
     category: "Newborn",
     image: "/photos/newborn-sleeping-headband.jpg",
-    seoTitle: "When to Book Newborn Photos & What to Expect | Skokie Newborn Photographer | Tovy Photography",
-    seoDescription: "Wondering when to book your newborn photography session? Skokie newborn photographer Gabi Tovy explains the ideal timing, what to expect, and how to prepare for beautiful in-home newborn photos.",
+    seoTitle: "When to Book Newborn Photos | Tovy Photography",
+    seoDescription: "When to book newborn photos, the best age for the session, and what an in-home newborn session with a Skokie photographer is really like.",
     content: `
 <p>If you're expecting or just welcomed a new baby, you've probably been thinking about newborn photos. When should you book? What actually happens during a session? Do you need to have everything together first? As a newborn photographer in Skokie serving families across Chicago's North Shore, these are the questions I hear most. Let me walk you through everything.</p>
 
@@ -135,8 +135,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-19",
     category: "Tips",
     image: "/photos/family-bed-portrait.jpg",
-    seoTitle: "What to Wear for Family Photos — Skokie & North Shore Photographer Tips | Tovy Photography",
-    seoDescription: "Not sure what to wear for your family photo session? Skokie family photographer Gabi Tovy shares simple, real-world outfit tips for newborn, family, and milestone sessions.",
+    seoTitle: "What to Wear for Family Photos | Tovy Photography",
+    seoDescription: "What to wear for family photos: simple, real-world outfit advice from a Skokie family photographer, for parents, kids and newborns.",
     content: `
 <p>This is the number one question I get from families before their photo session, every single time, without fail. And I love it because it means you care. So let me take the stress out of it right now.</p>
 
@@ -190,8 +190,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-20",
     category: "Locations",
     image: "/photos/spring-blossoms.jpg",
-    seoTitle: "8 Best Spring Family Photo Locations in Skokie & North Shore Chicago (2026) | Tovy Photography",
-    seoDescription: "Spring is here! Skokie family photographer shares 8 beautiful photo locations in Skokie, Evanston & Wilmette for your spring family session. Tips on best time of day and what makes each spot special.",
+    seoTitle: "Family Photo Locations in Skokie & North Shore | Tovy Photography",
+    seoDescription: "Eight spring family photo locations in Skokie and Chicago's North Shore, with what makes each one work and when the light is best.",
     content: `
 <p>Spring is officially here and after a long Chicago winter, there's no better time to get outside with your family and capture some beautiful photos. The flowers are starting to bloom, the light is getting warmer, and the kids are ready to run. One of the first things families ask me after booking is "where should we shoot?" Here are spots I love and recommend for spring family sessions in Skokie, Evanston, Wilmette, and across the North Shore.</p>
 
@@ -258,8 +258,8 @@ export const blogPosts: BlogPost[] = [
     category: "Maternity",
     image: "/photos/maternity-side-profile-bw.jpg",
     imagePosition: "center 70%",
-    seoTitle: "Maternity Photos: When to Book & What to Wear | Skokie Maternity Photographer | Tovy Photography",
-    seoDescription: "Everything you need to know about maternity photography sessions. When to book, what to wear, in-home vs outdoor, and why it's worth it. Serving Skokie, Evanston & Chicago's North Shore.",
+    seoTitle: "When to Take Maternity Photos, What to Wear | Tovy Photography",
+    seoDescription: "When to schedule maternity photos, what to wear, and how to plan a relaxed natural light session in Skokie and the North Shore.",
     content: `
 <p>If you're expecting, you've probably thought about maternity photos at least once. Maybe you're not sure if it's "your thing." Maybe you're wondering if it's too late. Maybe you just want to know what it actually looks like before committing. Here's everything you need to know about booking a maternity session.</p>
 
@@ -332,8 +332,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-15",
     category: "Locations",
     image: "/photos/north-shore-family-tall-grasses.jpg",
-    seoTitle: "Best Outdoor Family Photo Locations on Chicago's North Shore | Tovy Photography",
-    seoDescription: "A North Shore family photographer's guide to the best outdoor family photo locations near Chicago, from Glencoe beaches and the Chicago Botanic Garden to Fort Sheridan, Gillson Park, and quieter spots in Evanston and Skokie.",
+    seoTitle: "Outdoor Family Photo Locations, North Shore | Tovy Photography",
+    seoDescription: "The best outdoor family photo locations on Chicago's North Shore, from lakefront beaches to wooded trails, with the light and timing that make each one work.",
     content: `
 <p>One of the questions I get asked most often is some version of "where should we actually take our pictures?" And I love it, because choosing the right spot is half the magic. As a Skokie-based photographer, I spend a lot of my time scouting outdoor family photo locations across Chicago's North Shore, and I've built a detailed mental map of the spots that photograph beautifully in every season, and the ones that look gorgeous in person but turn into a sea of harsh shadows and parking headaches the moment you show up with three kids and a stroller.</p>
 
@@ -383,7 +383,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-03",
     category: "Tips",
     image: "/photos/golden-hour-family-lakeside.jpg",
-    seoTitle: "Best Time of Day for Outdoor Family Photos | Golden Hour Guide | Tovy Photography",
+    seoTitle: "Best Time of Day for Outdoor Family Photos | Tovy Photography",
     seoDescription: "Wondering the best time of day for outdoor family photos? A Skokie photographer shares golden hour timing, summer tips, and North Shore session advice.",
     content: `
 <p>If there's one question I get more than any other before a summer shoot, it's this: what's the best time of day for outdoor family photos? It's a great question, and the answer matters more than most people realize. You can pick the perfect outfits, choose a beautiful park, and have kids in genuinely good moods, but if we're standing in a field at high noon in July, the light will fight us the entire time. Get the timing right, and everything else falls into place. As a photographer who specializes in family and newborn sessions here in Skokie, timing is the very first thing I plan around, and I want to walk you through exactly how I think about it.</p>
@@ -430,8 +430,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-20",
     category: "Locations",
     image: "/photos/engagement-ring-hands-reaching.jpg",
-    seoTitle: "Best Engagement Photo Locations on Chicago's North Shore | Tovy Photography",
-    seoDescription: "A Skokie photographer's guide to the best engagement photo locations on Chicago's North Shore: beaches, gardens, lighthouses, and hidden gems in Evanston, Wilmette, Glencoe, and Highland Park.",
+    seoTitle: "Engagement Photo Spots on the North Shore | Tovy Photography",
+    seoDescription: "Engagement photo locations on Chicago's North Shore: lakefront, gardens, woods and neighborhood spots, with timing tips from a Skokie photographer.",
     content: `
 <p>When couples ask me where to take their engagement photos, they almost always assume we need to head downtown. The Chicago skyline is gorgeous, no argument there, but as a photographer based in Skokie, I'm going to let you in on something: some of the most beautiful engagement photo locations in the Chicago area are right here on the North Shore, and most of them come without the crowds, the parking headaches, or the twelve other couples waiting for the same spot.</p>
 

@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "About Gabi — Skokie Family Photographer",
   description:
-    "Meet Gabi Tovy, a Skokie-based family and newborn photographer specializing in authentic lifestyle photography. Learn about her approach to capturing real moments.",
+    "Gabi Tovy is a Skokie-based family, newborn and maternity photographer. Natural light, gently guided sessions at home or on location across the North Shore.",
   alternates: {
     canonical: "https://tovyphotography.com/about",
   },
