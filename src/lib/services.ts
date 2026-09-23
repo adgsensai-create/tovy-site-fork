@@ -294,6 +294,7 @@ export const services: Record<string, ServicePage> = {
       { label: "What to Wear for Family Photos", href: "/blog/what-to-wear-family-photo-session" },
       { label: "Family Photo Locations in Skokie", href: "/blog/best-family-photo-locations-skokie-north-shore" },
       { label: "Mini Sessions", href: "/sessions/mini-sessions" },
+      { label: "Planning a Fall Family Photoshoot", href: "/blog/fall-family-photos-guide" },
     ],
     cta: {
       heading: "Let's plan your family session",
@@ -377,7 +378,7 @@ export const services: Record<string, ServicePage> = {
       {
         question: "How much does a maternity photographer cost in Chicago?",
         answer:
-          "My maternity sessions run from $200 to $500 with edited images and print rights included. Published 2026 cost guides put most professional Chicago maternity sessions between about $500 and $1,200, and national averages between $250 and $700, so a natural light session at home or in a park is usually the more affordable route.",
+          "My maternity sessions run from $200 to $500 with edited images and print rights included. Published 2026 cost guides put most professional Chicago maternity sessions between about $500 and $1,200, and the national average between $250 and $700, so a natural light session at home or in a park is the affordable route. See my maternity photoshoot cost guide for the full breakdown.",
       },
       {
         question: "What should I wear for maternity photos?",
@@ -910,6 +911,387 @@ export const services: Record<string, ServicePage> = {
       button: "Request a Quote",
     },
     serviceType: "Event Photography",
+  },
+  "proposal-photography": {
+    slug: "proposal-photography",
+    shortName: "Proposal Photography",
+    title: "Chicago Proposal Photographer, Skokie and North Shore",
+    description:
+      "Surprise proposal photographer in Chicago and the North Shore. Hidden and ready at the spot you choose, then a short portrait session after the yes. From $200.",
+    eyebrow: "Chicago and the North Shore",
+    h1: "Proposal Photography",
+    tagline: "The question, the answer, and the first minute of forever.",
+    heroImage: "/photos/hero-engagement-lift.jpg",
+    heroAlt: "Chicago proposal photographer, couple celebrating after a surprise proposal in natural light",
+    cardBlurb: "Surprise proposal coverage in Chicago or near {town}, hidden until the yes, with portraits right after.",
+    intro: [
+      {
+        heading: "How a surprise proposal session works",
+        paragraphs: [
+          "You tell me the spot, the plan and the timing. I arrive early, blend in with a long lens from a distance, and photograph the walk up, the kneel, the reaction and the first hug without anyone knowing I am there. Once the answer is yes, I step out, say congratulations, and we spend twenty or thirty minutes on relaxed portraits while you are both still glowing.",
+          "I photograph proposals throughout Chicago and the North Shore: the lakefront in Evanston and Wilmette, the Chicago Riverwalk and skyline spots, the Garfield Park Conservatory, quiet park corners in Skokie and Glenview, and the places that already mean something to the two of you.",
+          "Proposal coverage uses the same packages as an engagement session, starting at $200, and every package includes edited images in a private gallery with full print rights.",
+        ],
+      },
+      {
+        heading: "Choosing where to propose",
+        paragraphs: [
+          "The best proposal spots have three things: a clear place for you to stand, somewhere natural for me to be, and good light at the time you plan to arrive. A bench under a tree, the end of a pier, a garden path with a bend in it. Wide open lawns and crowded plazas make hiding harder and the photos busier.",
+          "If you want ideas, I keep a short list of favorite spots on the North Shore and in the city, and I will scout the exact location before the day.",
+        ],
+      },
+    ],
+    includes: {
+      heading: "What you get",
+      items: [
+        { label: "A plan in advance", text: "a scouted spot, an exact mark for where to stand, a backup for weather, and a signal if the timing changes" },
+        { label: "Hidden coverage", text: "the approach, the kneel, the reaction and the first embrace, photographed from a distance" },
+        { label: "Portraits after the yes", text: "twenty to thirty minutes of relaxed photos of the two of you, ring included" },
+        { label: "Fast sneak peek", text: "a few edited images within a couple of days so you can share the news" },
+        { label: "Professionally edited images", text: "delivered in a private online gallery" },
+        { label: "Full print rights", text: "for announcements, save-the-dates and prints" },
+      ],
+    },
+    why: {
+      heading: "What makes proposal photos work",
+      items: [
+        {
+          title: "The biggest giveaway is a change in your routine.",
+          body: "If you never take sunset walks and suddenly insist on one, your partner will wonder. Build the proposal into something you would plausibly do anyway: a dinner reservation nearby, a walk you take often, a visit to a place you both like.",
+        },
+        {
+          title: "Too hidden is as bad as not hidden.",
+          body: "A photographer buried behind a tree misses the kneel and the face. I stay concealed on the approach and then work in the open once you are down on one knee, because by then nobody is looking at me.",
+        },
+        {
+          title: "Timing drifts, and that is planned for.",
+          body: "I arrive early and expect you anywhere from ten minutes early to ten minutes late. We agree on a small signal, like a text or a hand in a pocket, so I know the moment is close.",
+        },
+        {
+          title: "Chicago weather needs a plan B.",
+          body: "For outdoor proposals I hold a covered backup nearby and a rain date. The Garfield Park Conservatory and the Lincoln Park Conservatory are good all-weather choices.",
+        },
+        {
+          title: "Some places require a permit.",
+          body: "The Chicago Botanic Garden, the conservatories and several Chicago Park District sites have photography rules. I check what applies before we lock the spot.",
+        },
+      ],
+    },
+    pricing: {
+      heading: "Proposal photography pricing",
+      text: `Proposal coverage uses the standard packages: $200 for a 30-minute mini, $325 for a 60-minute Classic, which is the usual choice because it covers the wait, the moment and the portraits, and $500 for a 90-minute Full session with a second location. ${pricingNote}`,
+    },
+    faqs: [
+      {
+        question: "How much does a proposal photographer cost in Chicago?",
+        answer:
+          "My proposal coverage runs from $200 to $500 with edited images and print rights included. Published Chicago guides put standalone engagement and proposal sessions with an experienced photographer at roughly $450 to $1,200, so a natural light session with me is on the affordable end.",
+      },
+      {
+        question: "How do you stay hidden during a proposal?",
+        answer:
+          "I scout the spot in advance, arrive early, and photograph from a distance with a long lens while looking like anyone else in the park. Once you are on one knee I move closer, because at that point nobody is watching me.",
+      },
+      {
+        question: "What if my partner arrives early or late?",
+        answer:
+          "That is expected. I plan for a window of about twenty minutes around the agreed time, and we set up a simple signal so I know when you are close.",
+      },
+      {
+        question: "Can we do photos right after the proposal?",
+        answer:
+          "Yes, and I recommend it. A short portrait session right after the yes gives you relaxed, happy photos of the two of you and the ring while the moment is still real.",
+      },
+      {
+        question: "Where are the best places to propose in Chicago and the North Shore?",
+        answer:
+          "The lakefront at sunset in Evanston or Wilmette, the Chicago Riverwalk, the Garfield Park Conservatory for an indoor option, and quiet garden paths or benches in North Shore parks. The best spot is one that already means something to you.",
+      },
+      {
+        question: "How far in advance should I book a proposal photographer?",
+        answer:
+          "Two to four weeks is usually enough. If the date is fixed to a trip or an anniversary, book as soon as you know it, and earlier for spring and fall weekends.",
+      },
+    ],
+    proof: [
+      {
+        title: "Garfield Park Conservatory engagement session",
+        href: "/gallery/milestone/garfield-park-conservatory-engagement",
+        blurb: "The kind of greenery and soft light that works for a proposal in any season.",
+      },
+      {
+        title: "Family session at Keay Nature Center in Wilmette",
+        href: "/gallery/family/keay-nature-center-wilmette-family-session",
+        blurb: "Wooded North Shore paths with natural places to wait unseen.",
+      },
+      {
+        title: "Outdoor family session at the Skokie Public Library",
+        href: "/gallery/family/glickman-family-skokie-library",
+        blurb: "Relaxed, walking-style direction after the big moment.",
+      },
+    ],
+    related: [
+      { label: "Engagement Photography", href: "/sessions/engagement-photography" },
+      { label: "Best Engagement Photo Locations on the North Shore", href: "/blog/engagement-photo-locations-north-shore-chicago" },
+      { label: "Garfield Park Conservatory Engagement Photos", href: "/blog/garfield-park-conservatory-engagement-photos-chicago" },
+      { label: "Sessions and Pricing", href: "/sessions" },
+    ],
+    cta: {
+      heading: "Planning a proposal?",
+      text: "Tell me the date, the place you have in mind and how you picture it. I will suggest the exact spot, the timing and a package, and keep the secret.",
+      button: "Plan It With Me",
+    },
+    serviceType: "Proposal Photography",
+  },
+
+  "extended-family-photography": {
+    slug: "extended-family-photography",
+    shortName: "Extended Family Sessions",
+    title: "Extended Family Photographer, Skokie and North Shore",
+    description:
+      "Extended family and large family photoshoots in Skokie and Chicago's North Shore. Grandparents, cousins, multigenerational groups, at a park or at home. $500 Full session.",
+    eyebrow: "Skokie and Chicago North Shore",
+    h1: "Extended Family Photography",
+    tagline: "Everyone in one frame, and then the small groups that matter just as much.",
+    heroImage: "/photos/family-walking-playful.jpg",
+    heroAlt: "Extended family photographer North Shore, multigenerational family walking together outdoors in natural light",
+    cardBlurb: "Large family and multigenerational sessions near {town}, with everyone together and every smaller group covered.",
+    intro: [
+      {
+        heading: "What an extended family session looks like",
+        paragraphs: [
+          "Extended family sessions are for the times everyone is in town: grandparents visiting, cousins together for a holiday, a reunion, a milestone birthday. We start with the whole group while everyone is fresh, then work through the smaller groupings that families actually frame: each household, the grandparents with every grandchild, the siblings, the cousins.",
+          "I photograph large family groups outdoors at North Shore parks and beaches, in backyards, and inside homes when the group fits. Sessions are natural light and gently guided, so the photos look like your family on a good day rather than a line-up.",
+          "Extended family sessions are the 90-minute Full session, $500, with 30 edited images and full print rights included. Groups of six or fewer usually fit the 60-minute Classic.",
+        ],
+      },
+      {
+        heading: "Planning the groupings",
+        paragraphs: [
+          "Before the session we make a short list of the groups you want, from the whole family down to each pair of siblings. That list is the difference between a relaxed session and one where someone realizes on the drive home that there is no photo of grandma with the baby.",
+          "Ten to twelve groupings fit comfortably in a Full session with time left for candid moments and for the kids to run.",
+        ],
+      },
+    ],
+    includes: {
+      heading: "What you get",
+      items: [
+        { label: "A grouping list in advance", text: "so nobody is missed and nobody waits around" },
+        { label: "The whole group first", text: "while toddlers and grandparents are both at their best" },
+        { label: "Every household on its own", text: "each family gets its own set of photos in the same gallery" },
+        { label: "Candid time", text: "kids running, cousins piling on, the moments that only happen when everyone is together" },
+        { label: "Wardrobe guidance", text: "a simple palette so twelve people look coordinated without matching" },
+        { label: "Professionally edited images", text: "30 in a private online gallery with full print rights" },
+      ],
+    },
+    why: {
+      heading: "What makes large family photos work",
+      items: [
+        {
+          title: "The whole-group photo has about ten good minutes.",
+          body: "Toddlers, teenagers and grandparents all have limited patience, so the full group is photographed first, at the best light and before anyone is tired.",
+        },
+        {
+          title: "Big groups need open shade and even light.",
+          body: "Twelve people across a frame means the light has to be even from end to end. I pick tree lines and golden hour rather than dappled light or midday sun.",
+        },
+        {
+          title: "A palette beats matching shirts.",
+          body: "Two or three coordinated colors in soft, warm tones look like one family. Identical outfits flatten everyone. I send a palette in advance.",
+        },
+        {
+          title: "Location matters more when mobility varies.",
+          body: "A short walk from parking, a place to sit, and no stairs make a big difference for grandparents and for parents with a baby. I plan for the least mobile person first.",
+        },
+        {
+          title: "Home is often the best studio.",
+          body: "For a holiday or a visit, the living room, the porch and the backyard are where the real photos are. In-home extended family sessions work when the space has one bright room.",
+        },
+      ],
+    },
+    pricing: {
+      heading: "Extended family session pricing",
+      text: `Most extended family and multigenerational sessions are the $500 Full session: 90 minutes, one location and 30 edited images. Smaller groups of six or fewer usually fit the $325 Classic. ${pricingNote}`,
+    },
+    faqs: [
+      {
+        question: "How much does an extended family photoshoot cost?",
+        answer:
+          "My extended family sessions are $500 for the 90-minute Full session with 30 edited images and full print rights. Published 2026 cost guides put typical professional family sessions in the United States between about $300 and $750, and large groups with multiple households usually sit toward the top of that.",
+      },
+      {
+        question: "How many people can be in an extended family session?",
+        answer:
+          "There is no hard limit. Groups of ten to twenty are common. The Full session gives enough time for the whole group plus ten to twelve smaller groupings.",
+      },
+      {
+        question: "What should a large family wear for photos?",
+        answer:
+          "Pick a palette of two or three soft, warm colors and let each household choose within it. Avoid logos, neon and everyone in white. I send wardrobe guidance before the session.",
+      },
+      {
+        question: "Where do you photograph extended family sessions?",
+        answer:
+          "At parks and beaches in Skokie, Evanston, Wilmette, Glenview, Northbrook and across the North Shore, or at a family home. Sessions within 10 miles of Skokie carry no travel fee.",
+      },
+      {
+        question: "Can each family get their own photos from the session?",
+        answer:
+          "Yes. Every household gets its own grouping in the session, and the whole gallery is shared so each family can download and print what they want.",
+      },
+    ],
+    proof: [
+      {
+        title: "Outdoor family session at the Skokie Public Library",
+        href: "/gallery/family/glickman-family-skokie-library",
+        blurb: "Relaxed outdoor direction in the heart of Skokie.",
+      },
+      {
+        title: "Family session at Keay Nature Center in Wilmette",
+        href: "/gallery/family/keay-nature-center-wilmette-family-session",
+        blurb: "Wooded paths and even light, the kind of spot that works for big groups.",
+      },
+      {
+        title: "In-home family session in West Rogers Park",
+        href: "/gallery/family/west-rogers-park-9-month-family-session",
+        blurb: "What an at-home session looks like when the family gathers.",
+      },
+    ],
+    related: [
+      { label: "Family Photography", href: "/sessions/family-photography" },
+      { label: "What to Wear for Family Photos", href: "/blog/what-to-wear-family-photo-session" },
+      { label: "Best Family Photo Locations in Skokie", href: "/blog/best-family-photo-locations-skokie-north-shore" },
+      { label: "Sessions and Pricing", href: "/sessions" },
+    ],
+    cta: {
+      heading: "Is everyone going to be in town?",
+      text: "Tell me the dates, roughly how many people, and whether grandparents or a new baby are part of the group. I will suggest a location, a start time and the grouping list.",
+      button: "Plan the Session",
+    },
+    serviceType: "Family Photography",
+  },
+
+  "maternity-and-newborn-photography": {
+    slug: "maternity-and-newborn-photography",
+    shortName: "Maternity + Newborn",
+    title: "Maternity and Newborn Photography, Skokie North Shore",
+    description:
+      "Book maternity and newborn photography together in Skokie and Chicago's North Shore. Same photographer, same natural light, one story from bump to baby. From $200 each.",
+    eyebrow: "Skokie and Chicago North Shore",
+    h1: "Maternity and Newborn Photography",
+    tagline: "The waiting and the arrival, photographed as one story.",
+    heroImage: "/photos/parents-newborn-window.jpg",
+    heroAlt: "Maternity and newborn photography Skokie, parents holding their newborn by the window at home",
+    cardBlurb: "Pair a maternity session with an in-home newborn session near {town} so both galleries belong together.",
+    intro: [
+      {
+        heading: "Why book maternity and newborn photos together",
+        paragraphs: [
+          "Booking maternity and newborn photography together means one photographer, one style, and two galleries that belong to each other: you in your third trimester, and then your baby in the same home a few weeks later. It also means your newborn date is held before the baby arrives, which is the part most parents forget until it is too late.",
+          "The maternity session happens between 28 and 34 weeks, outdoors at golden hour or at home. The newborn session happens at home when your baby is about 5 to 14 days old. Both are natural light, both are gently guided, and both include your partner and any older kids.",
+          "There is no separate bundle price. Each session uses the standard packages starting at $200, so you choose the length that fits each stage, and I hold both dates when you book the first.",
+        ],
+      },
+      {
+        heading: "How the two sessions fit together",
+        paragraphs: [
+          "For most families it looks like this: reach out around 20 weeks, photograph the maternity session around 30 to 32 weeks, and hold a tentative newborn date around your due date. When the baby arrives, we confirm the real date within a day or two.",
+          "Photographing both in your home, by the same window, makes the two galleries read as chapters of one story. Many families come back at six months and one year for the same reason.",
+        ],
+      },
+    ],
+    includes: {
+      heading: "What you get",
+      items: [
+        { label: "Two sessions, one photographer", text: "the same calm approach and the same editing style across both galleries" },
+        { label: "Your newborn date held early", text: "a tentative date around your due date, confirmed once the baby is here" },
+        { label: "Outdoor or in-home maternity", text: "a North Shore park at golden hour, or the quiet of your own home" },
+        { label: "In-home newborn session", text: "window light, baby-led timing, siblings and family included" },
+        { label: "Wardrobe guidance", text: "for Classic and Full sessions at both stages" },
+        { label: "Professionally edited images", text: "in private online galleries with full print rights" },
+      ],
+    },
+    why: {
+      heading: "What makes a maternity and newborn pairing work",
+      items: [
+        {
+          title: "The newborn window is the part that gets missed.",
+          body: "Parents book the maternity session and mean to book the newborn one later. Then the baby comes early, or the first two weeks vanish. Holding the date at the maternity booking solves it.",
+        },
+        {
+          title: "Same light, same home, same story.",
+          body: "A maternity portrait by the nursery window and a newborn portrait by the same window a month later belong on the same wall. I plan the maternity session with the newborn session in mind.",
+        },
+        {
+          title: "Due dates move, and so does the plan.",
+          body: "If the baby arrives early or late, the newborn date shifts with it. There is no penalty and no scramble.",
+        },
+        {
+          title: "Older siblings need a role in both.",
+          body: "A toddler kissing the belly in October and holding the baby in November is the pair of photos families frame first. I plan both sessions around that.",
+        },
+      ],
+    },
+    pricing: {
+      heading: "Maternity and newborn pricing",
+      text: `Each session uses the standard packages: $200 for a 30-minute mini, $325 for a 60-minute Classic, and $500 for a 90-minute Full session. Most families choose the Classic for maternity and the Classic or Full for the newborn session. ${pricingNote}`,
+    },
+    faqs: [
+      {
+        question: "Do you offer a maternity and newborn package?",
+        answer:
+          "I book the two sessions together with the same packages rather than a separate bundle price. The value is in holding your newborn date early and having one photographer and one style across both galleries. Ask when you reach out and I will plan both.",
+      },
+      {
+        question: "When should I book maternity and newborn photos?",
+        answer:
+          "Reach out around 20 weeks. The maternity session happens between 28 and 34 weeks, and I hold a tentative newborn date around your due date that we confirm once the baby arrives.",
+      },
+      {
+        question: "How much do maternity and newborn sessions cost together?",
+        answer:
+          "Each session runs from $200 to $500 depending on length, so two Classic sessions are $650 and a Classic maternity with a Full newborn session is $825. Edited images and print rights are included in every package.",
+      },
+      {
+        question: "Can both sessions happen at home?",
+        answer:
+          "Yes. An in-home maternity session by a big window followed by a newborn session at the same window is one of my favorite pairings, especially in late fall and winter when golden hour is short.",
+      },
+      {
+        question: "Where do you photograph maternity and newborn sessions?",
+        answer:
+          "Throughout Skokie, Evanston, Wilmette, Lincolnwood, Glenview, Northbrook and Chicago's North Shore. Sessions within 10 miles of Skokie carry no travel fee.",
+      },
+    ],
+    proof: [
+      {
+        title: "In-home newborn session in Skokie",
+        href: "/gallery/newborn/cooper-family-welcome-baby-billie",
+        blurb: "Baby Billie at home by the window light.",
+      },
+      {
+        title: "Downtown Chicago newborn session",
+        href: "/gallery/newborn/nemsick-family-welcome-baby-henry",
+        blurb: "Baby Henry at home in the city, sibling included.",
+      },
+      {
+        title: "In-home newborn lifestyle session",
+        href: "/gallery/newborn/hoffman-family-welcome-baby-ava",
+        blurb: "Baby Ava's first days at home.",
+      },
+    ],
+    related: [
+      { label: "Maternity Photography", href: "/sessions/maternity-photography" },
+      { label: "Newborn Photography", href: "/sessions/newborn-photography" },
+      { label: "When to Take Maternity Photos", href: "/blog/maternity-photos-when-to-book-what-to-wear" },
+      { label: "When to Book Newborn Photos", href: "/blog/when-to-book-newborn-photos-what-to-expect" },
+    ],
+    cta: {
+      heading: "Expecting?",
+      text: "Tell me your due date and the season you have in mind. I will suggest maternity timing, hold a newborn date, and plan both sessions in one note.",
+      button: "Hold Both Dates",
+    },
+    serviceType: "Maternity Photography",
   },
 };
 

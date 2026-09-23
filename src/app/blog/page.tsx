@@ -4,9 +4,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 import BlogList from "@/components/BlogList";
 
 export const metadata: Metadata = {
-  title: "Blog | Tovy Photography — Skokie Family Photographer",
+  title: "Blog, Family and Newborn Photo Tips",
   description:
-    "Photography tips, session guides, and behind-the-scenes stories from Tovy Photography. Helping Skokie and North Shore families prepare for beautiful photo sessions.",
+    "Session guides, what to wear, when to book and the best photo locations in Skokie and Chicago's North Shore, from Tovy Photography.",
   alternates: {
     canonical: "https://tovyphotography.com/blog",
   },

@@ -5,9 +5,9 @@ import { getAllShoots, categories } from "@/lib/gallery-data";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Gallery — Family, Newborn & Event Photography Portfolio",
+  title: "Photo Gallery, Family, Newborn and Milestones",
   description:
-    "Browse the Tovy Photography portfolio. Family, newborn, milestone, and event photography in Skokie, IL and Chicago's North Shore. See real sessions and real moments.",
+    "Browse family, newborn, milestone and event photography sessions by Tovy Photography in Skokie, IL and Chicago's North Shore.",
   alternates: {
     canonical: "https://tovyphotography.com/gallery",
   },

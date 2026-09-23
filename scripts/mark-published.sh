@@ -31,14 +31,21 @@ merged="$("$GH_BIN" pr list --repo "$GH_REPO" --state merged --limit 200 \
   --jq '[.[] | select(.headRefName | startswith("content/"))
          | {slug: (.headRefName | ltrimstr("content/") | sub("--dry-run-.*$"; "")),
             pr: .number, mergedAt: .mergedAt}]')"
+# Any merged PR, by number: covers batch PRs that shipped several queue items at once
+# (those items carry a "pr" field but no content/<slug> branch).
+merged_numbers="$("$GH_BIN" pr list --repo "$GH_REPO" --state merged --limit 200 \
+  --json number,mergedAt --jq '[.[] | {pr: .number, mergedAt: .mergedAt}]')"
 
 tmp="$(mktemp)"
-jq --argjson merged "$merged" '
+jq --argjson merged "$merged" --argjson mergedNumbers "$merged_numbers" '
   .items |= map(
     . as $item
     | ([$merged[] | select(.slug == $item.slug)] | sort_by(.mergedAt) | last) as $m
-    | if $m != null and $item.status != "published"
+    | ([$mergedNumbers[] | select($item.pr != null and .pr == $item.pr)] | last) as $n
+    | if $item.status != "published" and $m != null
       then . + {status: "published", pr: $m.pr, publishedAt: ($m.mergedAt | .[0:10])}
+      elif $item.status != "published" and $n != null
+      then . + {status: "published", publishedAt: ($n.mergedAt | .[0:10])}
       else . end)
 ' "$QUEUE" > "$tmp"
 

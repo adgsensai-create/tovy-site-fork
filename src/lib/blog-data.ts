@@ -130,14 +130,41 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "what-to-wear-family-photo-session",
-    title: "What to Wear for Your Family Photo Session",
-    excerpt: "The outfit question comes up every single time. Here are my real, no-stress tips for looking great in your family photos without overthinking it.",
+    title: "Family Photo Outfits: What to Wear for Family Photos, by Season",
+    excerpt: "Family photo outfit ideas by season and by session type, plus the simple coordinate-not-match rule I give every family before a session.",
     date: "2026-03-19",
     category: "Tips",
     image: "/photos/family-bed-portrait.jpg",
-    seoTitle: "What to Wear for Family Photos | Tovy Photography",
-    seoDescription: "What to wear for family photos: simple, real-world outfit advice from a Skokie family photographer, for parents, kids and newborns.",
+    seoTitle: "Family Photo Outfits: What to Wear, by Season | Tovy Photography",
+    seoDescription: "Family photo outfit ideas for fall, spring, summer, winter and holiday cards, plus what dad and the kids should wear. Coordinate, do not match.",
+    faqs: [
+      { question: "What are the best family photo outfits?", answer: "Coordinated, not matching: two or three soft, warm colors shared across the family in simple textures everyone can move in. Cream, olive, rust, navy and mustard photograph well in natural light. Skip logos, neon and all-white." },
+      { question: "What should we wear for fall family photos?", answer: "Warm layered neutrals such as rust, mustard, olive, cream and navy, with a light sweater or flannel for kids and a long dress or soft wide-leg pants for mom. Skip bright orange and heavy coats." },
+      { question: "Should a family match for photos?", answer: "No. Pick two or three colors and let each person wear one in a different piece. Coordinated outfits look intentional while everyone still looks like themselves." },
+      { question: "What should dad wear for family photos?", answer: "A solid henley, knit sweater or linen shirt with chinos or dark jeans, usually in the darkest color of the family's palette. No logos and nothing shiny." },
+      { question: "Do you help families choose outfits?", answer: "Yes. Wardrobe guidance is included with Classic and Full sessions. Send photos of what you are considering and I will say what works and what to swap." },
+    ],
     content: `
+<p>The best family photo outfits are coordinated, not matching: two or three soft, warm colors shared across the family, simple textures, and clothes everyone can move in. Cream, olive, rust, navy and mustard photograph beautifully in natural light on the North Shore. Skip logos, neon and all-white, and dress for the season you are shooting in. That is the whole formula. Below is how I apply it, plus outfit ideas by season and by session type.</p>
+
+<h2>Family photo outfit ideas by season</h2>
+
+<h3>What should we wear for fall family photos?</h3>
+
+<p>Warm, layered neutrals. Rust, mustard, olive, cream and deep navy sit naturally against changing leaves. A light sweater or a flannel for the kids, a long dress or wide-leg pants in a soft solid for mom, a henley or a knit over a collar for dad. Skip bright orange, which fights the trees, and skip heavy coats if you can, since they hide everyone's shape.</p>
+
+<h3>What should we wear for spring and summer family photos?</h3>
+
+<p>Lighter fabrics in cream, sage, dusty rose, chambray and soft white paired with a color, never all white. Linen, cotton and flowy dresses move in the breeze at the lakefront. Bare feet on the beach are fine. For spring blossoms, soft pastels read well without looking like Easter.</p>
+
+<h3>What should we wear for winter or in-home family photos?</h3>
+
+<p>Cozy textures in cream, oatmeal, camel and charcoal: chunky knits, corduroy, a wool dress. For in-home sessions, think of what you would wear on a relaxed Sunday, one notch nicer. Socks or bare feet instead of shoes. Avoid black head to toe, which loses all detail indoors.</p>
+
+<h3>What should we wear for holiday card photos?</h3>
+
+<p>Keep it timeless rather than themed. A palette of cream, forest green, burgundy and navy looks like the holidays without a single reindeer. Matching pajamas are fun for one or two frames at home, not for the whole session.</p>
+
 <p>This is the number one question I get from families before their photo session, every single time, without fail. And I love it because it means you care. So let me take the stress out of it right now.</p>
 
 <h2>The Golden Rule: Let the People Shine</h2>
@@ -159,11 +186,11 @@ export const blogPosts: BlogPost[] = [
 <h2>What to Skip</h2>
 
 <ul>
-<li><strong>Neon or overly bright colors</strong> — they reflect onto skin and pull focus from your faces</li>
-<li><strong>Big logos or graphics</strong> — they date your photos and distract from the moment</li>
-<li><strong>All black everything</strong> — it absorbs light and loses detail, especially in natural light photography</li>
-<li><strong>Brand new shoes on kids</strong> — blisters and meltdowns are not the vibe</li>
-<li><strong>Anything that needs constant adjusting</strong> — if you're tugging at it now, you'll be tugging at it during the session</li>
+<li><strong>Neon or overly bright colors</strong>, they reflect onto skin and pull focus from your faces</li>
+<li><strong>Big logos or graphics</strong>, they date your photos and distract from the moment</li>
+<li><strong>All black everything</strong>, it absorbs light and loses detail, especially in natural light photography</li>
+<li><strong>Brand new shoes on kids</strong>, blisters and meltdowns are not the vibe</li>
+<li><strong>Anything that needs constant adjusting</strong>, if you're tugging at it now, you'll be tugging at it during the session</li>
 </ul>
 
 <h2>What to Wear for a Newborn Session</h2>
@@ -181,6 +208,28 @@ export const blogPosts: BlogPost[] = [
 <p>If you're still stuck, send me a photo of your outfit options. I do this all the time with my clients and I'm happy to help you narrow it down. Seriously, text me a mirror selfie. I've seen it all.</p>
 
 <p>Ready to book your family or newborn session in Skokie or the North Shore? <a href="/contact">Let's chat</a> and figure out the rest together.</p>
+
+<h2>Family photo outfits, answered</h2>
+
+<h3>What colors look best in family photos?</h3>
+
+<p>Soft, warm, muted tones: cream, olive, rust, navy, mustard, dusty rose, camel. They flatter every skin tone and hold up in natural light. Bright primary colors and neon cast color onto faces. Pure white blows out in sun. Black loses detail indoors.</p>
+
+<h3>Should a family match for photos?</h3>
+
+<p>No. Coordinate instead. Pick two or three colors and let each person wear one of them in a different piece. The photos look intentional and everyone still looks like themselves.</p>
+
+<h3>What should dad wear for family photos?</h3>
+
+<p>A solid henley, a knit sweater, a chambray or linen shirt, or a plain tee under an open overshirt, with chinos or dark jeans. Nothing with a logo, nothing shiny. Dads usually look best in the darkest color of the palette.</p>
+
+<h3>What should kids wear for family photos?</h3>
+
+<p>Whatever they can run in. Soft solids and small textures, comfortable shoes or bare feet, no characters and no words. Bring a spare outfit for anyone under five. Let older kids have a say so they show up happy.</p>
+
+<h3>Do you help with outfits?</h3>
+
+<p>Yes. Wardrobe guidance is included with my Classic and Full sessions. Send me photos of what you are thinking and I will tell you honestly what works and what to swap. You can see the packages on the <a href="/sessions/family-photography">family photography page</a>.</p>
 `,
   },
   {

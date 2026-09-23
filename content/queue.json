@@ -3,12 +3,91 @@
   "source": "content/seo-plan.md",
   "items": [
     {
+      "slug": "proposal-photography",
+      "type": "service",
+      "primaryKeyword": "chicago proposal photographer",
+      "sourceDraft": null,
+      "status": "in_review",
+      "plan": 5,
+      "notes": "Only claim proposals if gallery-data.ts has one; otherwise frame it as planning a proposal shoot and link the real engagement sessions. Shipped in the batch PR from Omer's fork (seo-batch-1).",
+      "branch": "seo-batch-1",
+      "pr": null,
+      "updatedAt": "2026-09-22"
+    },
+    {
+      "slug": "maternity-and-newborn-photography",
+      "type": "service",
+      "primaryKeyword": "maternity and newborn photography",
+      "sourceDraft": null,
+      "status": "in_review",
+      "plan": 10,
+      "notes": "There is no bundle price in site.pricing. Describe booking both sessions without inventing a package price. Shipped in the batch PR from Omer's fork (seo-batch-1).",
+      "branch": "seo-batch-1",
+      "pr": null,
+      "updatedAt": "2026-09-22"
+    },
+    {
+      "slug": "extended-family-photography",
+      "type": "service",
+      "primaryKeyword": "large family photoshoot",
+      "sourceDraft": null,
+      "status": "in_review",
+      "plan": 13,
+      "notes": "Also cover 'extended family photos' and 'multigenerational family photos'. Shipped in the batch PR from Omer's fork (seo-batch-1).",
+      "branch": "seo-batch-1",
+      "pr": null,
+      "updatedAt": "2026-09-22"
+    },
+    {
+      "slug": "engagement-photoshoot-cost-chicago",
+      "type": "cost",
+      "primaryKeyword": "engagement photoshoot cost",
+      "sourceDraft": null,
+      "status": "in_review",
+      "plan": 18,
+      "branch": "seo-batch-1",
+      "pr": null,
+      "updatedAt": "2026-09-22",
+      "notes": " Shipped in the batch PR from Omer's fork (seo-batch-1)."
+    },
+    {
+      "slug": "maternity-photoshoot-cost-chicago",
+      "type": "cost",
+      "primaryKeyword": "maternity photoshoot cost",
+      "sourceDraft": null,
+      "status": "in_review",
+      "plan": 19,
+      "branch": "seo-batch-1",
+      "pr": null,
+      "updatedAt": "2026-09-22",
+      "notes": " Shipped in the batch PR from Omer's fork (seo-batch-1)."
+    },
+    {
       "slug": "fall-family-photos-guide",
       "type": "guide",
       "primaryKeyword": "fall family photoshoot",
       "sourceDraft": null,
+      "status": "in_review",
+      "plan": 22,
+      "pr": 4,
+      "branch": "content/fall-family-photos-guide",
+      "updatedAt": "2026-09-21"
+    },
+    {
+      "slug": "rewrite-newborn-photography",
+      "type": "rewrite",
+      "primaryKeyword": "in-home newborn photography",
+      "target": {
+        "url": "/sessions/newborn-photography",
+        "file": "src/app/sessions/newborn-photography/page.tsx"
+      },
+      "sourceDraft": null,
       "status": "queued",
-      "plan": 22
+      "pr": null,
+      "notes": "Folds the former in-home-newborn and lifestyle-newborn items into this page. Work the phrases 'in-home newborn photography' and 'lifestyle newborn photography' into the citable summary, one H3 and one FAQ. Keep every existing FAQ. Do not change the hero.",
+      "keep": [
+        "The tiny details you'll want to remember forever."
+      ]
     },
     {
       "slug": "christmas-holiday-family-photos",
@@ -19,6 +98,22 @@
       "plan": 23
     },
     {
+      "slug": "rewrite-family-photography",
+      "type": "rewrite",
+      "primaryKeyword": "lifestyle family photography",
+      "target": {
+        "url": "/sessions/family-photography",
+        "file": "src/app/sessions/family-photography/page.tsx"
+      },
+      "sourceDraft": null,
+      "status": "queued",
+      "pr": null,
+      "notes": "Folds the former lifestyle-family item into this page. Add 'lifestyle family photography' and 'in-home family photoshoot' to the summary, one H3 and one FAQ. Keep every existing FAQ.",
+      "keep": [
+        "Nobody stands in a line and says cheese."
+      ]
+    },
+    {
       "slug": "hanukkah-family-photoshoot",
       "type": "guide",
       "primaryKeyword": "hanukkah photoshoot",
@@ -27,72 +122,17 @@
       "plan": 31
     },
     {
-      "slug": "proposal-photography",
-      "type": "service",
-      "primaryKeyword": "chicago proposal photographer",
+      "slug": "rewrite-about",
+      "type": "rewrite",
+      "primaryKeyword": "skokie family photographer gabi tovy",
+      "target": {
+        "url": "/about",
+        "file": "src/app/about/page.tsx"
+      },
       "sourceDraft": null,
       "status": "queued",
-      "plan": 5,
-      "notes": "Only claim proposals if gallery-data.ts has one; otherwise frame it as planning a proposal shoot and link the real engagement sessions."
-    },
-    {
-      "slug": "in-home-newborn-photography",
-      "type": "service",
-      "primaryKeyword": "in-home newborn photography near me",
-      "sourceDraft": null,
-      "status": "queued",
-      "plan": 9,
-      "notes": "The live post newborn-photos-at-home-vs-studio owns 'newborn photography at home'. Link to it and do not compete for that phrase."
-    },
-    {
-      "slug": "maternity-and-newborn-photography",
-      "type": "service",
-      "primaryKeyword": "maternity and newborn photography",
-      "sourceDraft": null,
-      "status": "queued",
-      "plan": 10,
-      "notes": "There is no bundle price in site.pricing. Describe booking both sessions without inventing a package price."
-    },
-    {
-      "slug": "lifestyle-newborn-photography",
-      "type": "service",
-      "primaryKeyword": "lifestyle newborn photography",
-      "sourceDraft": null,
-      "status": "queued",
-      "plan": 11
-    },
-    {
-      "slug": "lifestyle-family-photography",
-      "type": "service",
-      "primaryKeyword": "lifestyle family photography",
-      "sourceDraft": null,
-      "status": "queued",
-      "plan": 12
-    },
-    {
-      "slug": "extended-family-photography",
-      "type": "service",
-      "primaryKeyword": "large family photoshoot",
-      "sourceDraft": null,
-      "status": "queued",
-      "plan": 13,
-      "notes": "Also cover 'extended family photos' and 'multigenerational family photos'."
-    },
-    {
-      "slug": "engagement-photoshoot-cost-chicago",
-      "type": "cost",
-      "primaryKeyword": "engagement photoshoot cost",
-      "sourceDraft": null,
-      "status": "queued",
-      "plan": 18
-    },
-    {
-      "slug": "maternity-photoshoot-cost-chicago",
-      "type": "cost",
-      "primaryKeyword": "maternity photoshoot cost",
-      "sourceDraft": null,
-      "status": "queued",
-      "plan": 19
+      "pr": null,
+      "notes": "Add a citable two-sentence summary under the H1 (who Gabi is, where she is based, what she photographs, starting price). Add three literal-question H3s: Who is the photographer behind Tovy Photography, What areas do you serve, What is your photography style. Render a FAQ with FAQPage schema the way the newborn page does. The hero must stay solid rose pink."
     },
     {
       "slug": "bar-mitzvah-photographer-cost",
@@ -103,6 +143,19 @@
       "plan": 20
     },
     {
+      "slug": "rewrite-when-to-book-newborn-photos",
+      "type": "rewrite",
+      "primaryKeyword": "when to take newborn photos",
+      "target": {
+        "url": "/blog/when-to-book-newborn-photos-what-to-expect",
+        "file": "src/lib/blog-data.ts"
+      },
+      "sourceDraft": null,
+      "status": "queued",
+      "pr": null,
+      "notes": "Blog post in blog-data.ts. Make the first paragraph the direct answer (5 to 14 days; book in the third trimester). Add H3s for 'When to take newborn photos', 'When to schedule newborn photos', 'How old should baby be for newborn photos'. Add a faqs array. Keep Gabi's paragraphs."
+    },
+    {
       "slug": "family-photos-with-dog",
       "type": "guide",
       "primaryKeyword": "family photos with dog",
@@ -111,12 +164,38 @@
       "plan": 26
     },
     {
+      "slug": "rewrite-maternity-when-to-book",
+      "type": "rewrite",
+      "primaryKeyword": "when to take maternity photos",
+      "target": {
+        "url": "/blog/maternity-photos-when-to-book-what-to-wear",
+        "file": "src/lib/blog-data.ts"
+      },
+      "sourceDraft": null,
+      "status": "queued",
+      "pr": null,
+      "notes": "Blog post in blog-data.ts. First paragraph answers directly (28 to 34 weeks). Add H3s for 'When to take maternity photos', 'What is the best week for maternity photos', 'What to wear for maternity photos'. Add faqs. Keep Gabi's paragraphs."
+    },
+    {
       "slug": "newborn-photos-with-siblings",
       "type": "guide",
       "primaryKeyword": "newborn photos with siblings",
       "sourceDraft": null,
       "status": "queued",
       "plan": 27
+    },
+    {
+      "slug": "rewrite-best-family-photo-locations",
+      "type": "rewrite",
+      "primaryKeyword": "family photo locations near me",
+      "target": {
+        "url": "/blog/best-family-photo-locations-skokie-north-shore",
+        "file": "src/lib/blog-data.ts"
+      },
+      "sourceDraft": null,
+      "status": "queued",
+      "pr": null,
+      "notes": "Blog post. Add an answer-first opener listing the locations in one sentence, an H3 per location phrased as a question where natural, permit notes for forest preserves and the Botanic Garden, and a faqs array. Keep the eight locations and Gabi's descriptions."
     },
     {
       "slug": "what-to-wear-for-maternity-photos",
@@ -128,12 +207,38 @@
       "notes": "The live post maternity-photos-when-to-book-what-to-wear overlaps. Go deeper on outfits and link to it."
     },
     {
+      "slug": "rewrite-testimonials",
+      "type": "rewrite",
+      "primaryKeyword": "tovy photography reviews",
+      "target": {
+        "url": "/testimonials",
+        "file": "src/app/testimonials/page.tsx"
+      },
+      "sourceDraft": null,
+      "status": "queued",
+      "pr": null,
+      "notes": "Add a citable summary under the H1 that says what the reviews are from (family, in-home and event sessions in Skokie and Chicago). Add a short 'How to leave a review' line linking to the Google Business Profile if its link is in site.ts, otherwise to /contact. Keep every testimonial verbatim. Keep the Review schema."
+    },
+    {
       "slug": "what-to-wear-for-newborn-photos",
       "type": "guide",
       "primaryKeyword": "what to wear for newborn photos",
       "sourceDraft": null,
       "status": "queued",
       "plan": 29
+    },
+    {
+      "slug": "rewrite-engagement-locations",
+      "type": "rewrite",
+      "primaryKeyword": "best places for engagement photos in chicago",
+      "target": {
+        "url": "/blog/engagement-photo-locations-north-shore-chicago",
+        "file": "src/lib/blog-data.ts"
+      },
+      "sourceDraft": null,
+      "status": "queued",
+      "pr": null,
+      "notes": "Blog post. Answer-first opener, H3 per location, permit notes, faqs array. Link to /sessions/engagement-photography and /sessions/proposal-photography."
     },
     {
       "slug": "birth-announcement-photos",
@@ -144,6 +249,19 @@
       "plan": 34
     },
     {
+      "slug": "rewrite-outdoor-family-locations",
+      "type": "rewrite",
+      "primaryKeyword": "outdoor family photo locations",
+      "target": {
+        "url": "/blog/outdoor-family-photo-locations-north-shore-chicago",
+        "file": "src/lib/blog-data.ts"
+      },
+      "sourceDraft": null,
+      "status": "queued",
+      "pr": null,
+      "notes": "Blog post. Answer-first opener, H3 per location, best-light notes, faqs array. Cross-link with the fall guide and the Skokie locations post."
+    },
+    {
       "slug": "how-to-prepare-for-family-photos",
       "type": "guide",
       "primaryKeyword": "how to prepare for family photos",
@@ -151,6 +269,19 @@
       "status": "queued",
       "plan": 35,
       "notes": "Also answer 'how long does a family photo session take' from site.pricing durations. The plan says a draft exists, but it is not on this Mac."
+    },
+    {
+      "slug": "rewrite-best-time-of-day",
+      "type": "rewrite",
+      "primaryKeyword": "best time of day for family photos",
+      "target": {
+        "url": "/blog/best-time-of-day-outdoor-family-photos",
+        "file": "src/lib/blog-data.ts"
+      },
+      "sourceDraft": null,
+      "status": "queued",
+      "pr": null,
+      "notes": "Blog post. First sentence gives the answer (60 to 90 minutes before sunset). H3s for 'What time of day is best for outdoor family photos', 'Is morning or evening better', 'What about winter'. faqs array."
     },
     {
       "slug": "gillson-park-family-photos",
@@ -292,5 +423,6 @@
       "plan": 50,
       "notes": "Block unless gallery-data.ts shows a senior or graduation session."
     }
-  ]
+  ],
+  "note": "Types: guide, cost, service, location write a new page; rewrite improves an existing page in place (see the prompt). The loop runs Monday and Thursday."
 }

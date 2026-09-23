@@ -8,9 +8,9 @@ import { locationPages } from "@/lib/locations";
 import { site, breadcrumbJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Family Photographer in Skokie and the North Shore",
+  title: "Skokie Family Photographer, North Shore",
   description:
-    "Natural, relaxed family photography in Skokie, Evanston, and Chicago's North Shore. Outdoor and in-home sessions that capture real connection. Sessions from $200.",
+    "Natural, relaxed family photography in Skokie, Evanston and Chicago's North Shore. Outdoor and in-home sessions in natural light. Sessions from $200.",
   alternates: {
     canonical: "https://tovyphotography.com/sessions/family-photography",
   },

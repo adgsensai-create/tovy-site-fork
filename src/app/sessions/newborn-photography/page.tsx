@@ -8,9 +8,9 @@ import { locationPages } from "@/lib/locations";
 import { site, breadcrumbJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Newborn Photographer in Skokie and the North Shore",
+  title: "Skokie Newborn Photographer, North Shore",
   description:
-    "Gentle, in-home newborn photography in Skokie and Chicago's North Shore. Relaxed sessions for babies 5 to 14 days new. Naturally posed, beautifully lit, stress-free.",
+    "In-home newborn photography in Skokie, Evanston, Wilmette and Chicago's North Shore. Natural light, baby-led sessions for babies 5 to 14 days old. From $200.",
   alternates: {
     canonical: "https://tovyphotography.com/sessions/newborn-photography",
   },

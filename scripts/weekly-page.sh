@@ -153,6 +153,7 @@ SUMMARY="$RUN_DIR/summary.json"
   cat "$PROMPT_FILE"
   printf '\n\n## Run parameters\n\n'
   printf -- '- SLUG: %s\n- TYPE: %s\n- PRIMARY_KEYWORD: %s\n- SOURCE_DRAFT: %s\n' "$SLUG" "$TYPE" "$KEYWORD" "$SOURCE_DRAFT"
+  printf -- '- TARGET: %s\n' "$(jq -c '.target // null' <<<"$item")"
   printf -- '- DRY_RUN: %s\n- TODAY: %s\n- SUMMARY_PATH: %s\n' "$DRY_RUN" "$(date +%Y-%m-%d)" "$SUMMARY"
 } > "$RUN_DIR/prompt.md"
 
@@ -217,12 +218,16 @@ git push -q -u origin "$BRANCH"
 STAGE="pull request"
 TITLE="$(jq -r .title "$SUMMARY")"
 URL_PATH="$(jq -r .url "$SUMMARY")"
-PR_TITLE="New $TYPE page: $TITLE"
+if [ "$TYPE" = "rewrite" ]; then PR_TITLE="Rewrite: $TITLE"; else PR_TITLE="New $TYPE page: $TITLE"; fi
 [ "$DRY_RUN" = 1 ] && PR_TITLE="[DRY RUN] $PR_TITLE"
 {
   [ "$DRY_RUN" = 1 ] && printf '> **Dry run.** The queue item stays `queued`. Merging publishes the page and the next weekly run will mark it published. Close it instead if you only wanted to preview.\n\n'
   printf '**Primary keyword:** %s\n\n' "$KEYWORD"
-  printf '**New page:** `%s` (%s, in `%s`)\n\n' "$URL_PATH" "$TYPE" "$(jq -r .dataFile "$SUMMARY")"
+  if [ "$TYPE" = "rewrite" ]; then
+    printf '**Rewritten page:** `%s` (in `%s`). Same URL, same design, sharper copy and metadata.\n\n' "$URL_PATH" "$(jq -r .dataFile "$SUMMARY")"
+  else
+    printf '**New page:** `%s` (%s, in `%s`)\n\n' "$URL_PATH" "$TYPE" "$(jq -r .dataFile "$SUMMARY")"
+  fi
   printf '**Vercel preview:** _paste preview URL here_\n\n'
   printf '### Pages it links to\n'
   jq -r '.linksTo[]? | "- `\(.)`"' "$SUMMARY"

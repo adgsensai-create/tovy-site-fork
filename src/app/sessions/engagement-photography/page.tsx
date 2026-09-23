@@ -8,9 +8,9 @@ import { locationPages } from "@/lib/locations";
 import { site, breadcrumbJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Engagement Photographer, Chicago and the North Shore",
+  title: "Chicago North Shore Engagement Photographer",
   description:
-    "Natural, joyful engagement photography in Evanston, Wilmette, Skokie, and across Chicago's North Shore. Celebrate your love story with photos that feel like you.",
+    "Natural, joyful engagement photography in Evanston, Wilmette, Skokie and Chicago. Lakefront, conservatory and neighborhood sessions from $200.",
   alternates: {
     canonical: "https://tovyphotography.com/sessions/engagement-photography",
   },

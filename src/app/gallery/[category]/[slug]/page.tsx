@@ -29,8 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shoot = getShootBySlug(category, slug);
   if (!shoot) return {};
 
-  const title = `${shoot.title} | ${categoryLabels[category] || "Photography"}`;
-  const description = `${shoot.description} View the full ${shoot.category.toLowerCase()} photography session by Tovy Photography in Skokie, IL.`;
+  const title = { absolute: `${shoot.title} | Tovy Photography` };
+  const description =
+    shoot.description.length > 155
+      ? shoot.description.slice(0, shoot.description.lastIndexOf(" ", 152)) + "."
+      : shoot.description;
 
   return {
     title,

@@ -24,7 +24,7 @@ const categoryMeta: Record<
   }
 > = {
   family: {
-    title: "Family Photography Gallery, Skokie and North Shore",
+    title: "Family Photo Gallery, Skokie North Shore",
     description:
       "Browse family photography sessions by Tovy Photography. Natural, playful family portraits in Skokie, IL and Chicago's North Shore.",
     h1: "Family Photography",
@@ -43,7 +43,7 @@ const categoryMeta: Record<
     ],
   },
   newborn: {
-    title: "Newborn Photography Gallery, In-Home Sessions",
+    title: "Newborn Photo Gallery, In-Home Sessions",
     description:
       "Gentle, natural newborn photography by Tovy Photography. In-home sessions in Skokie, IL capturing the first days with your new baby.",
     h1: "Newborn Photography",
@@ -62,7 +62,7 @@ const categoryMeta: Record<
     ],
   },
   milestone: {
-    title: "Milestone Photography Gallery, Skokie North Shore",
+    title: "Milestone Photo Gallery, Skokie",
     description:
       "Milestone photography by Tovy Photography. Maternity, first birthdays, graduations, and more in Skokie, IL and Chicago's North Shore.",
     h1: "Milestone Photography",
@@ -81,7 +81,7 @@ const categoryMeta: Record<
     ],
   },
   event: {
-    title: "Event Photography Gallery, Bar Mitzvahs and Celebrations",
+    title: "Event Gallery, Bar Mitzvahs and Celebrations",
     description:
       "Event photography by Tovy Photography. Bar Mitzvahs, celebrations, and special occasions captured with joy and authenticity.",
     h1: "Event Photography",

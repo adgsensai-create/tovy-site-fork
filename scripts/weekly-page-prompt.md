@@ -18,7 +18,8 @@ The run parameters are appended at the bottom of this prompt: `SLUG`, `TYPE`, `P
 2. Read `CLAUDE.md` in full. Its Brand Rules are binding. Then read the Ground rules section of `content/seo-plan.md`, which is binding too.
    If the queue item has a `notes` field, follow it. A note that says "Block unless" is a condition you must check before writing anything.
 3. If `SOURCE_DRAFT` is not `null`, read that file. It is Gabi's draft. Keep her wording and ideas wherever they already meet the rules below. Your job is to shape it, not replace her voice.
-4. Check the slug is new. Block with reason `slug exists` if it already appears in `src/lib/blog-posts-seo.ts`, `src/lib/blog-data.ts`, `src/lib/services.ts`, or `src/lib/locations.ts`.
+4. If `TYPE` is `rewrite`, skip this check: the page already exists and the queue item's `target` field names it (a URL path plus the file that renders it). Otherwise, check the slug is new. Block with reason `slug exists` if it already appears in `src/lib/blog-posts-seo.ts`, `src/lib/blog-data.ts`, `src/lib/services.ts`, or `src/lib/locations.ts`.
+5. **One page per intent.** Before writing a new `service` or `guide`, read the titles and first paragraphs of the existing service pages (`src/lib/services.ts`, `src/app/sessions/*/page.tsx`) and SEO posts (`src/lib/blog-posts-seo.ts`). If an existing page already answers the same core question as `PRIMARY_KEYWORD` (for example "in-home newborn photography" is the newborn page, "lifestyle family photography" is the family page), do not create a second page. Block with reason `cannibalizes /<existing-path>` so a human can turn the item into a `rewrite` of that page instead.
 
 ## Step 2: Gather facts before writing
 
@@ -49,7 +50,21 @@ The run parameters are appended at the bottom of this prompt: `SLUG`, `TYPE`, `P
 | `service` | `src/lib/services.ts` | Add a `ServicePage` to `services`, keyed by slug. Fill every required field of the interface. Phrase `intro[].heading` as literal questions where it reads naturally. Do not set `hasOwnPage`. | `/sessions/<slug>` |
 | `location` | `src/lib/locations.ts` | Add a `LocationPage` to `locationPages`, keyed by slug. Use the shared FAQ helpers in that file where they fit. `proof` items must be real galleries. `nearby` must list existing location slugs. | `/locations/<slug>` |
 
+| `rewrite` | The file named in the queue item's `target.file` | See **Rewriting an existing page** below. | Unchanged: `target.url` |
+
 The sitemap reads all three files, so do not edit `src/app/sitemap.ts`.
+
+**Rewriting an existing page (`TYPE` = `rewrite`).** The goal is to make a page that already exists answer its question directly for search engines and AI assistants, without changing what Gabi wrote or how the page looks.
+
+- Keep the URL, the file, the layout, the images and every design element. You are editing copy and metadata, not redesigning.
+- Keep Gabi's sentences wherever they already work. Add, tighten and reorder; do not replace her voice with yours. If the queue item lists `keep` phrases, they must survive verbatim.
+- Add a two-sentence citable summary directly under the H1 (or as the first paragraph of a blog post) that says who, what, where and the starting price in plain words. Static service pages already have a "Citable summary" section; update it rather than adding a second one.
+- Turn the questions people actually search into literal `<h3>` headings with the direct answer in the first sentence. Aim for 3 to 6 of them. For a blog post, add or update the `faqs` array so it matches those questions. For a static page under `src/app/`, update the `faqs` constant the page already has, or add one and render it the same way the newborn page does.
+- Set the page `title` to 60 characters or fewer **without** the brand name (the layout adds " | Tovy Photography"). Blog posts use `seoTitle` with the brand included, 65 characters or fewer. Descriptions 120 to 155 characters, plain, no exclamation points.
+- Replace every em dash and every "Not X. Y." construction. Remove any number that is not from `site.pricing` or a linked source.
+- Add two internal links from the page to related pages that exist, and one link to the page from another existing page if it has fewer than two inbound links (check with `grep -r "<url>" src`).
+- Do not touch `Header.tsx`, pricing values, the About page hero color, admin or client-gallery code.
+- In the summary file set `url` to `target.url` and `dataFile` to `target.file`.
 
 ## Step 4: Link it in
 
@@ -78,6 +93,8 @@ Stage only the files you changed and commit once:
 ```
 git add <files>
 git commit -m "Add <type> page: <page title>" -m "Primary keyword: <keyword>. Linked from: <pages>."
+# or, for a rewrite:
+git commit -m "Rewrite: <page title>" -m "Primary keyword: <keyword>. Answer-first summary, question headings, FAQ schema, metadata."
 ```
 
 ## Step 8: Write the summary

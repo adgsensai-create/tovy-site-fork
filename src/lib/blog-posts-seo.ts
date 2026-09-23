@@ -196,4 +196,152 @@ export const seoBlogPosts: BlogPost[] = [
 <p>Ready to plan? Here is <a href="/sessions/newborn-photography">how my in-home newborn sessions work</a>, or <a href="/contact">reach out</a> with your due date.</p>
 `,
   },
+  {
+    slug: "engagement-photoshoot-cost-chicago",
+    title: "How Much Does an Engagement Photoshoot Cost in Chicago?",
+    excerpt:
+      "Engagement photoshoot cost in Chicago, from published 2026 guides and from my own pricing: what the ranges mean, what drives them, and what you should get for the money.",
+    date: "2026-09-22",
+    category: "Tips",
+    image: "/photos/garfield-park-conservatory-engagement/cover-bench.jpg",
+    seoTitle: "Engagement Photoshoot Cost in Chicago | Tovy Photography",
+    seoDescription:
+      "How much does an engagement photoshoot cost? Chicago guides put standalone sessions at $450 to $1,200. My North Shore engagement sessions run $200 to $500.",
+    faqs: [
+      {
+        question: "How much does an engagement photoshoot cost in Chicago?",
+        answer:
+          "A 2026 Chicago pricing guide from TWA Photography puts a standalone engagement session with a professional at $450 to $1,200. My engagement sessions in Chicago and the North Shore run from $200 for a 30-minute mini to $500 for a 90-minute session with two locations, edited images and print rights included.",
+      },
+      {
+        question: "Why do engagement photographers charge such different prices?",
+        answer:
+          "Experience is the biggest factor. PhotographersRanked's 2026 guide puts a second-shooter at $300 to $500 an hour, an experienced portrait photographer at $600 to $1,200, and an in-demand wedding photographer at $1,200 to $2,500 or more. Session length, number of locations and whether images are included matter too.",
+      },
+      {
+        question: "Is an engagement session included in wedding photography?",
+        answer:
+          "Sometimes. Higher-priced wedding packages often bundle one. If you are booking a wedding photographer, ask. If you want a standalone session, or your wedding photographer is far away, a local portrait photographer is usually the more affordable route.",
+      },
+      {
+        question: "What should an engagement photoshoot include?",
+        answer:
+          "At minimum: the photographer's time at one location, direction so you look natural, professionally edited digital images, and the right to print and share them. Ask whether a second location, a second outfit and a fast sneak peek are included.",
+      },
+    ],
+    content: `
+<p>An engagement photoshoot in Chicago typically costs between $450 and $1,200 for a standalone session with a professional photographer, according to <a href="https://twaphoto.com/engagement-photography-in-chicago-locations-pricing-everything-you-need-to-know-2026/">TWA Photography's 2026 Chicago pricing guide</a>. Nationally the spread is wider. <a href="https://withjoy.com/blog/engagement-photos-cost/">Joy's engagement photo cost guide</a> puts it anywhere from $200 to more than $3,000. My engagement sessions in Chicago and the North Shore run from $200 to $500, and the edited images are included.</p>
+
+<p>That is the short answer. Here is what sits behind the numbers so you can compare quotes fairly.</p>
+
+<h2>What the 2026 guides say</h2>
+
+<h3>How much does an engagement photoshoot cost in Chicago?</h3>
+
+<p>TWA's guide says a standalone Chicago session runs $450 to $1,200. At the low end that means about 45 to 60 minutes at one location with edited digital files. At the high end it means 90 minutes to two hours, more than one location, heavier editing and sometimes print credits. The same guide notes that couples spending $3,500 to $7,000 on wedding photography often have an engagement session bundled in or offered as a discounted add-on.</p>
+
+<h3>Why do engagement photographers charge such different prices?</h3>
+
+<p>Experience, mostly. <a href="https://photographersranked.com/blog/engagement-photography-pricing-guide-2026">PhotographersRanked's 2026 pricing guide</a> breaks it into three tiers: a photographer who second-shoots weddings may charge $300 to $500 for a one-hour session, a working portrait photographer with three to seven years of experience charges $600 to $1,200, and a sought-after wedding photographer who books out a year ahead charges $1,200 to $2,500 or more. The same guide adds a 15 to 25 percent premium for Chicago compared to national averages, and notes that spring and fall weekends often carry a 10 to 20 percent peak-season premium.</p>
+
+<h2>What changes the price</h2>
+
+<ul>
+<li><strong>Session length and locations.</strong> One location for an hour is the base. A second location, a second outfit and a longer session all add cost.</li>
+<li><strong>Images included or sold separately.</strong> Some photographers charge a session fee and then price each image. Add it up before you compare.</li>
+<li><strong>Wedding bundling.</strong> If your wedding photographer includes a session, the standalone price may not matter. If they are out of town, a local session is often cheaper than flying them in.</li>
+<li><strong>Permits.</strong> The Garfield Park Conservatory, the Chicago Botanic Garden and several Chicago Park District sites require a photography permit. It is usually a small fee, but it is a fee.</li>
+<li><strong>Season.</strong> Peak fall and spring dates cost more with many photographers. Winter and weekday sessions are easier to book.</li>
+</ul>
+
+<h2>What my engagement sessions cost</h2>
+
+<h3>How much does Tovy Photography charge for engagement photos?</h3>
+
+<p>Engagement sessions use my standard packages. The Mini is $200 for 30 minutes at one location with 10 edited images. The Classic is $325 for 60 minutes and 20 images, and it is what most couples choose. The Full is $500 for 90 minutes and 30 images with two locations, which works well for a lakefront-plus-neighborhood plan. Every package includes a private online gallery and full print rights, and sessions within 10 miles of Skokie carry no travel fee. Details are on the <a href="/sessions/engagement-photography">engagement photography page</a> and the <a href="/sessions">Sessions and Pricing page</a>.</p>
+
+<h2>What you should get for the money</h2>
+
+<p>Whatever you spend, an engagement session should include a photographer who directs you gently rather than posing you stiffly, professionally edited images, clear print rights, and a plan for weather. Ask to see a full gallery from a real session, not just highlights. You can see one of mine from the <a href="/gallery/milestone/garfield-park-conservatory-engagement">Garfield Park Conservatory</a>.</p>
+
+<h2>Ways to keep the cost reasonable</h2>
+
+<p>Book a weekday evening. Choose one strong location instead of two. Skip products until you have seen the gallery. And if you want the photos for save-the-dates, plan the session at least two months before you need to send them so there is no rush fee anywhere in the chain.</p>
+
+<p>If you are planning engagement photos in Chicago or on the North Shore, <a href="/contact">tell me about the two of you</a> and where you would like to be photographed, and I will suggest a location, a time and a package.</p>
+`,
+  },
+  {
+    slug: "maternity-photoshoot-cost-chicago",
+    title: "How Much Does a Maternity Photoshoot Cost in Chicago?",
+    excerpt:
+      "Maternity photoshoot cost in Chicago and the North Shore: the 2026 published ranges, what drives them, and what my natural light maternity sessions cost.",
+    date: "2026-09-22",
+    category: "Maternity",
+    image: "/photos/family-bed-portrait.jpg",
+    seoTitle: "Maternity Photoshoot Cost in Chicago | Tovy Photography",
+    seoDescription:
+      "How much does a maternity photoshoot cost? Chicago guides put most sessions at $500 to $1,200. My natural light maternity sessions run $200 to $500.",
+    faqs: [
+      {
+        question: "How much does a maternity photoshoot cost in Chicago?",
+        answer:
+          "One Big Happy Photo's 2026 pricing guide puts most professional Chicago maternity sessions between $500 and $1,200. Tov Studio Photo's 2026 guide puts Chicago outdoor sessions at $350 to $600 and boutique studio sessions at $800 to $1,500. My maternity sessions in Skokie and the North Shore run from $200 to $500 with edited images and print rights included.",
+      },
+      {
+        question: "What is the average cost of maternity photography in the US?",
+        answer:
+          "Tov Studio Photo's 2026 guide puts the US average at $250 to $700 for a standard session. One Big Happy Photo's tiers run $200 to $400 for a short budget session, $450 to $800 for mid-range, and $900 to $2,500 or more for studio packages with wardrobe, hair and makeup.",
+      },
+      {
+        question: "Why are studio maternity sessions more expensive?",
+        answer:
+          "Gown collections, hair and makeup, studio rent and products such as albums. Those add several hundred dollars. A natural light session outdoors or at home skips all of them.",
+      },
+      {
+        question: "What should a maternity photoshoot include?",
+        answer:
+          "The photographer's time, gentle direction, your partner and kids in the frames if you want them, professionally edited images, and the right to print. Ask whether wardrobe help is included and whether images are part of the price or sold separately.",
+      },
+    ],
+    content: `
+<p>A maternity photoshoot in Chicago costs between $500 and $1,200 for most professional sessions, according to <a href="https://onebighappyphoto.com/maternity-photoshoot-pricing/">One Big Happy Photo's 2026 maternity pricing guide</a>. <a href="https://tovstudiophoto.com/average-cost-of-maternity-photography/">Tov Studio Photo's 2026 cost guide</a> splits Chicago into outdoor sessions at $350 to $600 and boutique studio sessions at $800 to $1,500, with a national average of $250 to $700. My maternity sessions in Skokie and the North Shore run from $200 to $500, and the edited images are included.</p>
+
+<p>Here is what is behind those ranges, so you can compare quotes that are structured differently.</p>
+
+<h2>What the 2026 guides say</h2>
+
+<h3>How much does a maternity photoshoot cost in Chicago?</h3>
+
+<p>One Big Happy Photo's guide says most professional Chicago sessions land between $500 and $1,200, and describes three tiers: budget sessions of 30 to 45 minutes with 5 to 10 edited images at $200 to $400, mid-range sessions of 60 to 90 minutes with 20 to 40 images and an online gallery at $450 to $800, and premium studio sessions with styling, wardrobe, hair and makeup and albums at $900 to $2,500 or more.</p>
+
+<h3>What is the average cost of maternity photography in the US?</h3>
+
+<p>Tov Studio Photo's guide puts the 2026 national average at $250 to $700 for a standard session. It places Chicago in its second pricing tier alongside Seattle, Austin and Denver, with outdoor sessions at $350 to $600 and boutique studio work at $800 to $1,500. Wardrobe is the single biggest driver: studios with a gown collection charge more because the gowns are expensive to buy and maintain.</p>
+
+<h2>What changes the price</h2>
+
+<ul>
+<li><strong>Studio or natural light.</strong> Studio rent, backdrops and lighting are built into the price. Outdoor and in-home sessions are not.</li>
+<li><strong>Wardrobe, hair and makeup.</strong> Beautiful, and often the difference between a $400 session and a $1,200 one. If you already have a dress you love, you do not need them.</li>
+<li><strong>Images included or sold separately.</strong> Add up the session fee plus the images you actually want before comparing.</li>
+<li><strong>Length.</strong> A 30-minute session at golden hour covers you and your partner. A 60 or 90-minute session leaves time for older kids and a second outfit.</li>
+<li><strong>Travel.</strong> Sessions within 10 miles of Skokie carry no travel fee with me. Beyond that, $50.</li>
+</ul>
+
+<h2>What my maternity sessions cost</h2>
+
+<h3>How much does Tovy Photography charge for maternity photos?</h3>
+
+<p>Maternity sessions use my standard packages. The Mini is $200 for 30 minutes at one location with 10 edited images. The Classic is $325 for 60 minutes and 20 images, and it is the usual choice because it leaves room for your partner and kids. The Full is $500 for 90 minutes and 30 images. Wardrobe guidance is included with Classic and Full sessions, every package includes a private online gallery with full print rights, and I photograph outdoors at North Shore parks and beaches or in your home. Details are on the <a href="/sessions/maternity-photography">maternity photography page</a>. Many families pair the maternity session with an in-home newborn session, which is described on the <a href="/sessions/maternity-and-newborn-photography">maternity and newborn page</a>.</p>
+
+<h2>When to book</h2>
+
+<p>The best window for maternity photos is 28 to 34 weeks. Reach out around 20 weeks to hold a date in the season you want, and earlier if you are expecting twins or an early delivery. More on timing and what to wear is in <a href="/blog/maternity-photos-when-to-book-what-to-wear">when to book maternity photos and what to wear</a>.</p>
+
+<h2>Ways to keep the cost reasonable</h2>
+
+<p>Choose natural light over a studio. Wear a dress you already own, in a soft solid color that moves. Book a weekday evening at a park close to home. Skip albums until you have seen the gallery. If you are expecting in Skokie, Evanston, Wilmette or anywhere on the North Shore, <a href="/contact">tell me your due date</a> and I will suggest timing, a location and a package.</p>
+`,
+  },
 ];
